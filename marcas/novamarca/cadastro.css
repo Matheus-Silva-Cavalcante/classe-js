@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+html{
+    font-size: 10px;
+    height: 100%;
+}
+
+body{
+    height: 100%;
+}
+
+main{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    box-shadow: .1rem .1rem .4rem #787878;
+    border-radius: 1rem;
+    padding: 7rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.area-cadastro{
+    width: 30rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.area-cadastro>div{
+    font-size: 2rem;
+}
+
+.input-texto{
+    box-shadow: .1rem .1rem .4rem #787878;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+    border: none;
+    transition: .5s;
+}
+
+.input-texto:focus-visible{
+    outline: .1rem solid rgb(101, 173, 255);
+}
+
+.area-botoes{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-acao{
+    font-size: 1.8rem;
+    width: 12rem;
+    height: 3.8rem;
+    border: none;
+    border-radius: 1rem;
+    color: #fff;
+    transition: .5s;
+}
+
+.btn-salvar{
+    background-color: #3A96FF;
+}
+
+.btn-salvar:hover{
+    background-color: #0570eb;
+}
+
+.btn-cancelar{
+    background-color: #c1c1c1;
+}
+
+.btn-cancelar:hover{
+    background-color: #a5a5a5;
+}

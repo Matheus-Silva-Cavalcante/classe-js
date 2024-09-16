@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Modelo</title>
+    <link rel="stylesheet" href="/modelos/novomodelo/novomodelo.css">
+
+    <!-- <script src="/marcas/novamarca/salvarmarca.js" defer></script>
+    <script src="/motorizacao/novamotorizacao/salvarmotorizacao.js" defer></script>
+    <script src="/carroceria/novacarroceria/salvarcarroceria.js" defer></script>
+    <script src="/modelos/novomodelo/salvarmodelo.js" defer></script>
+    <script src="/modelos/novomodelo/novomodelo.js" defer></script> -->
+</head>
+<body>    
+    <div class="container">
+        <div class="area-titulo">
+            <h3>Cadastro de Modelo</h3>
+        </div>
+
+        <div class="area-conteudo">
+            <div class="area-cadastro">
+                <label for="nomeModelo">Nome do Modelo :</label>
+                <input class="input-select" id="nomeModelo" type="text" placeholder="Nome do Carro ?">
+
+                <div id="inputModeloVasia" class="alerta-campo-vasio" style="display: none;">
+                    Nome do Carro Obrigatoria !!
+                </div>
+            </div>
+
+            <div class="area-cadastro">
+                <label for="nomeMarcas">Marca :</label>
+                <select class="input-select nome-marca" name="" id="nomeMarcas">
+                    <option>Volkswagen</option>
+                    <option>Audi</option>
+                    <option>Porsche</option>
+                </select>
+            </div>
+
+            <div class="area-cadastro">
+                <label for="nomeMotorizacao">Tipos de Motorização :</label>
+                <select class="input-select nome-motor" name="" id="nomeMotorizacao">
+                    <option>flex - Gasolina e álcoo</option>
+                    <option>Gasolina</option>
+                    <option>Diesel</option>
+                </select>
+            </div>
+
+            <div class="area-cadastro">
+                <label for="nomeCarroceria">Tipo de Carroceria :</label>
+                <select class="input-select nome-carrocaria" name="" id="nomeCarroceria">
+                    <option>Sedan</option>
+                    <option>SUV</option>
+                    <option>Hatchback</option>
+                </select>
+            </div>
+
+            <div class="area-cadastro">
+                <label for="numeroPorta">Número de Portas</label>
+                <input class="input-select" id="numeroPorta" type="number" placeholder="Quantas Portas ?">
+
+                <div id="inputPotaloVasia" class="alerta-campo-vasio" style="display: none;">
+                    Quantidade de Portas Obrigatoria !!
+                </div>
+            </div>
+        </div>
+
+        <div class="area-botoes">
+            <button id="btnSalvarModelo" class="btn-acao btn-salvar">Salvar</button>
+
+            <button id="btnCancelarModelo" class="btn-acao btn-cancelar">Cancelar</button>
+        </div>
+    </div>
+</body>
+</html>

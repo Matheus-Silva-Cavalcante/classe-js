@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+html{
+    font-size: 10px;
+    height: 100%;
+}
+
+body{
+    height: 100%;
+}
+
+main{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container{
+    max-width: 43rem;
+    width: 100%;
+    max-height: 68rem;
+    /* max-height: 50.5rem; */
+    height: 100%;
+    box-sizing: border-box;
+    box-shadow: .1rem .1rem .4rem #939393;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.area-acao-top{
+    border-radius: 1rem 1rem 0 0;
+    background-color: #eeeeee;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+}
+
+.area-acao-top>h3{
+    font-size: 2.2rem;
+    color: #303030;
+}
+
+.botoes{
+    display: flex;
+    gap: 1rem;
+}
+
+.botoes-editar-excluir{
+    transition: .5s;
+    width: 3.8rem;
+    height: 3.8rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: #fff;
+    color: #4d4d4d;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.btn-excluir-ativo{
+    background-color: #fd6a6a;
+}
+
+.btn-aditar-ativo{
+    background-color: #278afa;
+}
+
+.btn-aditar:hover{
+    background-color: #6aaaf2;
+}
+
+.btn-excluir:hover{
+    background-color: #ff8c8c;
+}
+
+.area-conteudo{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.1rem 4rem;
+    overflow: auto;
+    flex: 1;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar{
+    border-radius: 0 .5rem .5rem 0;
+    width: .5rem;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color:#e4e4e4;
+    border-radius: .5rem;
+}
+
+.conteudo{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: .1rem .1rem .4rem #939393;
+    color: #4d4d4d;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    cursor: pointer;
+}
+
+.conteudo-ativo{
+    border: .1rem solid rgb(101, 173, 255);
+}
+
+.conteudo-texto{
+    flex: 1;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.hr-conteudo{
+    width: 60%;
+    height: .2rem;
+    background-color: rgb(179, 179, 179);
+    border: none;
+}
+
+.area-acao-low{
+    border-radius: 0 0 1rem 1rem;
+    background-color: #eeeeee;
+    height: 7rem;
+    padding: 0 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-acao{
+    width: 15rem;
+    height: 4rem;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.btn-adicionar{
+    background-color: #3A96FF;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.btn-adicionar:hover{
+    background-color: #0570eb;
+}
+
+.btn-voltar{
+    background-color: #c1c1c1;
+    color: #ffffff;
+    font-size: 1.6rem;
+}
+
+.btn-voltar:hover{
+    background-color: #a5a5a5;
+}

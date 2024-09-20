@@ -54,11 +54,6 @@ export default class Pessoa{
         this._cnpj = new CNPJ(value);
     };
 
-    // set cnpj(value){
-    //     if(!value.match(/^\d{2}.\d{3}.\d{3}\/\d{4}-\d{2}$/)) throw "CNPJ inválido";
-    //     this._cnpj = value;
-    // };
-
     get cpf(){
         return this._cpf;
     };

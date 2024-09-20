@@ -28,7 +28,6 @@ export default class Modelo {
         this._marca = value;
     };
 
-
     get motorizacao(){
         return this._motorizacao;
     };
@@ -37,7 +36,6 @@ export default class Modelo {
         
         this._motorizacao = value;
     };
-
 
     get carroceria(){
         return this._carroceria;
@@ -48,14 +46,14 @@ export default class Modelo {
         this._carroceria = value;
     };
 
-
     get portas(){
         return this._portas;
     };
     set portas(value){
         if(isNaN(value)) throw "A quantidade de portas tem que ser em números";
         if(value.length <= 0) throw "A qunatidade de portas é obrigatória";
-        if(value === 0) throw "A qunatidade de portas não pode ser 0"
+        if(value === 0) throw "A qunatidade de portas não pode ser 0";
+        
         this._portas = value;
     };
 };

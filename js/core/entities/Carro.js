@@ -59,21 +59,20 @@ export default class Carro {
     set placa(value){
         if(value.length !== 7) throw "A placa tem que conter 7 caracteres";
 
-        const valueMaiusculo = value.toUpperCase();
-        if(!valueMaiusculo.match(/[A-Z]{3}[0-9][0-9A-Z][0-9]{2}/)) throw "A placa do carro deve conter os seguintes caracteres de letras é números:'AAA0A00'";
+        const placaMaiusculo = value.toUpperCase();
+        if(!placaMaiusculo.match(/[A-Z]{3}[0-9][0-9A-Z][0-9]{2}/)) throw "A placa do carro deve conter os seguintes caracteres de letras é números:'AAA0A00'";
 
-        this._placa = valueMaiusculo;
+        this._placa = placaMaiusculo;
     };
 
-    get renavem(){
-        return this._renvam;
+    get renavam(){
+        return this._renavam;
     };
-    set renavem(value){
+    set renavam(value){
         if(isNaN(value)) throw "O renavam precisa ser composto por número";
         if(value.length !== 11) throw "O número do renavam precisa ter 11 caracteres";
-        // if(value.length > 11) throw "O número do renavam não pode ter mais que 11 caracteres";
 
-        this._renvam = value;
+        this._renavam = value;
     };
 
     get compra(){

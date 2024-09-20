@@ -1,10 +1,8 @@
 export default class CNPJ{
     constructor(cnpj){
-        if(typeof cnpj != "string") throw "CNPJ precisa ser uma string";
-
         cnpj = this._sanitize(cnpj);
 
-        if(!this._validate(cnpj)) throw `CNPJ ${cnpj} não é válido`;
+        this._validate(cnpj);
 
         this._value = cnpj;
     };
@@ -14,13 +12,15 @@ export default class CNPJ{
     };
 
     _sanitize(cnpj){
-        return cnpj.replace(/[^\d]+/g,'');
-    }
+        return cnpj.replace?.(/[^\d]+/g,'');
+    };
 
     _validate(cnpj){
-        if (cnpj.length !== 14) return false;
+        if(typeof cnpj != "string") throw "CNPJ precisa ser uma string";
 
-        if (/^(.)\1+$/.test(cnpj)) return false;
+        if (cnpj.length !== 14) throw "O CNPJ precisa ter 14 caracteres";
+
+        if (/^(.)\1+$/.test(cnpj)) throw "O CNPJ não pode ter números repetidos";
 
         let tamanho = cnpj.length - 2;
         let numeros = cnpj.substring(0, tamanho);
@@ -35,7 +35,7 @@ export default class CNPJ{
 
         let resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11);
 
-        if (resultado !== parseInt(digitos.charAt(0), 10)) return false;
+        if (resultado !== parseInt(digitos.charAt(0), 10)) throw `CNPJ ${cnpj} não é válido`;
 
         tamanho = tamanho + 1;
         numeros = cnpj.substring(0, tamanho);
@@ -50,6 +50,6 @@ export default class CNPJ{
         resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11);
 
         return resultado === parseInt(digitos.charAt(1), 10);
-    }
+    };
 };
 

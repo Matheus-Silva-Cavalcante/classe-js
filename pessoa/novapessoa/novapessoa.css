@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+html{
+    font-size: 10px;
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    width: 38rem;
+    border-radius: 1rem;
+    box-shadow: .1rem .1rem .4rem #939393;
+}
+
+.area-titulo{
+    border-radius: 1rem 1rem 0 0;
+    background-color: #eee;
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.area-titulo>h3{
+    font-size: 2rem;
+    color: #4d4d4d;
+}
+
+.area-conteudo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 4rem;
+}
+
+.area-cadastro{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.area-cadastro>label{
+    font-size: 1.5rem;
+    color: #4d4d4d;
+}
+
+.alerta-campo-vasio{
+    color: rgb(255, 32, 32);
+    font-size: 1.5rem;
+}
+
+.input-select{
+    border-radius: 1rem;
+    box-shadow: .1rem .1rem .4rem #939393;
+    border: none;
+    height: 3rem;
+    padding: 0 1rem;
+    outline: transparent;
+    transition: .5s;
+    color: #4d4d4d;
+}
+
+.erro{
+    outline: .1rem solid rgb(255, 32, 32);
+}
+
+.input-select:focus-visible{
+    outline: .1rem solid rgb(101, 173, 255);
+}
+
+.area-botoes{
+    border-radius: 0 0 1rem 1rem;
+    background-color: #eee;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+}
+
+.btn-acao{
+    width: 13rem;
+    height: 3.2rem;
+    border: none;
+    border-radius: 1rem;
+    color: #fff;
+    font-size: 1.6rem;
+    transition: .5s;
+}
+
+.btn-salvar{
+    background-color: #3A96FF;
+}
+
+.btn-salvar:hover{
+    background-color: #0570eb;
+}
+
+.btn-cancelar{
+    background-color: #c1c1c1;
+}
+
+.btn-cancelar:hover{
+    background-color: #a5a5a5;
+}

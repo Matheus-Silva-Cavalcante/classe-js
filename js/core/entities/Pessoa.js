@@ -28,7 +28,7 @@ export default class Pessoa{
         return this._endereco;
     };
     set endereco(value){
-        if(!value.match(/([\w\W]+)\s(\d+)/)) throw "Esse enderço não é válido";
+        if(!value.match(/([\w\W]+)\s(\d+)/)) throw "O enderço não é válido";
 
         this._endereco = value;
     };

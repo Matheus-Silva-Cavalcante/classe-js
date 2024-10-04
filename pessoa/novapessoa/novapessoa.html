@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar nova Pessoa</title>
+    <link rel="stylesheet" href="/pessoa/novapessoa/novapessoa.css">
+</head>
+<body>    
+    <div class="container">
+        <div class="area-titulo">
+            <h3>Cadastro de Pessoa</h3>
+        </div>
+
+        <div class="area-conteudo">
+            <div class="area-cadastro">
+                <label for="tipoPessoa">Tipo de Pessoa :</label>
+                <select class="input-select" name="" id="tipoPessoa">
+                    <option>Física</option>
+                    <option>Jurídica</option>
+                </select>
+            </div>
+
+            <div class="area-cadastro">
+                <label for="nomePessoa">Nome Completo :</label>
+                <input class="input-select" id="nomePessoa" type="text" placeholder="Nome Completo">
+
+                <div id="inputPessoaVasia" class="alerta-campo-vasio" style="display: none;">
+                    Nome Obrigatória !
+                </div>
+            </div>
+
+            <div class="area-cadastro" style="display: none;">
+                <label for="nomeFantasia">Nome Fantasia :</label>
+                <input class="input-select" id="nomeFantasia" type="text" placeholder="Nome Fantasia">
+
+                <div id="inputPessoaVasia" class="alerta-campo-vasio" style="display: none;">
+                    Nome Obrigatória !
+                </div>
+            </div>
+
+            <div class="area-cadastro" style="display: none;">
+                <label for="razaoSocial">Razão Social :</label>
+                <input class="input-select" id="razaoSocial" type="text" placeholder="Razão Social">
+
+                <div id="inputRazaoSocialVasia" class="alerta-campo-vasio" style="display: none;">
+                    Razão Social Obrigatória !
+                </div>
+            </div>
+
+            <div class="area-cadastro">
+                <label for="endereco">Endereço :</label>
+                <input class="input-select" id="endereco" type="text" placeholder="Rui, Avenida, etc...">
+                
+                <div id="inputEnderecoVasia" class="alerta-campo-vasio" style="display: none;">
+                    Endereço é Obrigatório !
+                    Obrigatório
+                </div>
+            </div>
+
+            <div class="area-cadastro">
+                <label for="telefone">Telefone :</label>
+                <input class="input-select" id="telefone" type="tel" placeholder="Celular ou fixo">
+
+                <div id="inputTelefoneVasia" class="alerta-campo-vasio" style="display: none;">
+                    Telefone é Obrigatório !
+                </div>
+            </div>
+
+            <div class="area-cadastro">
+                <label for="email">Email :</label>
+                <input class="input-select" id="email" type="email" placeholder="Escreva seu melhor Email">
+
+                <div id="inputEmailVasia" class="alerta-campo-vasio" style="display: none;">
+                    Email é Obrigatório !
+                </div>
+            </div>
+
+            <div class="area-cadastro">
+                <label for="cpf">CPF :</label>
+                <input class="input-select" id="cpf" type="tel" placeholder="000.000.000-00">
+
+                <div id="inputCpfVasia" class="alerta-campo-vasio" style="display: none;">
+                    CPF é Obrigatório !
+                </div>
+            </div>
+
+            <div class="area-cadastro" style="display: none;">
+                <label for="cnpj">CNPJ :</label>
+                <input class="input-select" id="cnpj" type="tel" placeholder="00.000.000/0000-00">
+
+                <div id="inputCpfVasia" class="alerta-campo-vasio" style="display: none;">
+                    CNPJ é Obrigatório !
+                </div>
+            </div>
+        </div>
+
+        <div class="area-botoes">
+            <button id="btnSalvarPessoa" class="btn-acao btn-salvar">Salvar</button>
+
+            <button id="btnCancelarPessoa" class="btn-acao btn-cancelar" onclick="location.href= '/pessoa/pessoa.html'">Cancelar</button>
+        </div>
+    </div>
+</body>
+</html>

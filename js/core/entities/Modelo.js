@@ -7,7 +7,7 @@ export default class Modelo {
         return this._id;
     };
     set id(value){
-        if (isNaN(value)) throw "id precisa ser um numero" ;
+        if (isNaN(value)) throw "id precisa ser um numero";
         this._id = value; 
     };
 
@@ -24,7 +24,7 @@ export default class Modelo {
         return this._marca;
     };
     set marca(value){
-        if(!value || value.constructor !== Marca) throw "O campo marca precisa ser uma unstância da classe " + Marca.name;
+        if(!value || value.constructor !== Marca) throw "O campo marca precisa ser uma instância da classe " + Marca.name;
         this._marca = value;
     };
 

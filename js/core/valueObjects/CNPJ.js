@@ -5,6 +5,7 @@ export default class CNPJ{
         this._validate(cnpj);
 
         this._value = cnpj;
+        
     };
 
     valueOf(){
@@ -20,7 +21,7 @@ export default class CNPJ{
 
         if (cnpj.length !== 14) throw "O CNPJ precisa ter 14 caracteres";
 
-        if (/^(.)\1+$/.test(cnpj)) throw "O CNPJ não pode ter números repetidos";
+        if (/^(.)\1+$/.test(cnpj)) throw `O CNPJ ${cnpj} não pode ter números repetidos`;
 
         let tamanho = cnpj.length - 2;
         let numeros = cnpj.substring(0, tamanho);

@@ -1,13 +1,13 @@
 export default class Telefone{
     constructor(telefone){
         telefone = this._sanitize(telefone);
-        
+
         this._validate(telefone);
 
         this._value = telefone;
     };
 
-    _valueOf(){
+    valueOf(){
         return this._value;
     };
 

@@ -3,7 +3,7 @@ export default class Motorizacao{
         return this._id;
     };
     set id(value){
-        if(isNaN(value)) throw "O id precisa ser um número";
+        if(isNaN(value)) throw "O id da motorização precisa ser um número";
         this._id = value;
     };
 

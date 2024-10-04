@@ -24,7 +24,8 @@ main{
 }
 
 .container{
-    width: 43rem;
+    width: 100%;
+    max-width: 43rem;
     max-height: 49rem;
     height: 100%;
     box-sizing: border-box;

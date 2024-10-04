@@ -4,10 +4,10 @@ export default class CPF{
 
         this._validate(cpf);
 
-        this._value = cpf;
+        this._value = cpf
     };
 
-    _valueOf(){
+    valueOf(){
         return this._value;
     };
 

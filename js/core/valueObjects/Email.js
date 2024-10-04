@@ -1,7 +1,9 @@
 export default class Email{
     constructor(email){
         email = this._sanitize(email);
+        
         this._validate(email);
+        
         this._value = email;
     };
 

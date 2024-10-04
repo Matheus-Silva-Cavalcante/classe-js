@@ -18,12 +18,18 @@ export default class Carro {
         this._modelo = value;
     };
 
+    _sanitize(value){
+        return value.replace?.(/[^\d]+/g,'');
+    };
+
     get anoFabricacao(){
         return this._anoFabricacao; 
     };
     set anoFabricacao(value){
+        value = this._sanitize(value);
         if(isNaN(value)) throw 'Ano de fabricação precisa ser um número';
         if(value < 1900) throw 'Ano de fabricação precisa ser maior que 1900';
+
         const hoje = new Date();
         if(hoje.getFullYear() < value) throw 'Ano de fabricação precisa ser menor ou igual o ano atual';
 
@@ -34,6 +40,7 @@ export default class Carro {
         return this._anoModelo;
     };
     set anoModelo(value){
+        value = this._sanitize(value);
         if(isNaN(value)) throw "O ano do modelo precisa ser um número";
         if(value < 1900) throw 'Ano do modelo precisa ser maior que 1900';
 
@@ -69,6 +76,7 @@ export default class Carro {
         return this._renavam;
     };
     set renavam(value){
+        value = this._sanitize(value);
         if(isNaN(value)) throw "O renavam precisa ser composto por número";
         if(value.length !== 11) throw "O número do renavam precisa ter 11 caracteres";
 
@@ -79,7 +87,10 @@ export default class Carro {
         return this._compra;
     };
     set compra(value){
+        value = this._sanitize(value);
         if(isNaN(value)) throw "O valor da compra deve ser composto por número";
+        if(value.length <= 0) throw "O valor de compra é obrigatório";
+        if(value < 10000) throw "O valor de compra não porde ser menor que 1000";
         this._compra = value;
     };
 
@@ -87,7 +98,10 @@ export default class Carro {
         return this._venda;
     };
     set venda(value){
+        value = this._sanitize(value);
         if(isNaN(value)) throw "O valor de venda deve ser composto por número";
+        if(value.length <= 0) throw "O valor de venda é obrigatório";
+        if(value < 1000) throw "O valor de venda não porde ser menor que 1000";
         this._venda = value;
     };
 
@@ -97,7 +111,7 @@ export default class Carro {
     set proprietarioAnterior(value){
         if(!value || value.constructor !== Pessoa) throw "O campo pessoa precisa ser uma instância da classe " + Pessoa.name;
 
-        this._proprietarioAnterior = value
+        this._proprietarioAnterior = value;
     }
 
     get cliente(){

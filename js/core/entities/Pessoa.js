@@ -86,12 +86,12 @@ export default class Pessoa{
     };
 
     // get cpf(){
-    //     console.log(this._isPJ, "pessoa física")
-    //     if(this._isPJ === true) throw "Não é possivel colocar o CNPJ em pessoa Física";
-
     //     return this._cpf;
     // };
     // set cpf(value){
+    //     console.log(this._isPJ, "pessoa física")
+    //     if(this._isPJ === true) throw "Não é possivel colocar o CNPJ em pessoa Física";
+
     //     this._cpf = new CPF(value);
     // };
 };

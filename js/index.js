@@ -6,6 +6,8 @@ import Motorizacao from "./core/entities/Motorizacao.js";
 import Pessoa from "./core/entities/Pessoa.js";
 import { marcaRepository, motorizacaoRepository, carroceriaRepository, modeloRepository, pessoaRepository, carroRepository } from "./core/repositories/repositories.js";
 
+window.Pessoa = Pessoa;
+
 window.marcaRepository = marcaRepository;
 window.motorizacaoRepository = motorizacaoRepository;
 window.carroceriaRepository = carroceriaRepository;
@@ -16,7 +18,7 @@ window.carroRepository = carroRepository;
 const umaMarca = new Marca();
 umaMarca.nome = 'VolksWagen';
 
-// marcaRepository.add(umaMarca);
+marcaRepository.add(umaMarca);
 console.log(marcaRepository.list());
 // marcaRepository.delete(2);
 // console.log(marcaRepository.get(6));
@@ -25,7 +27,7 @@ console.log(marcaRepository.list());
 const motorizacao = new Motorizacao()
 motorizacao.nome = 'Gasolina';
 
-// motorizacaoRepository.add(motorizacao);
+motorizacaoRepository.add(motorizacao);
 console.log(motorizacaoRepository.list());
 // motorizacaoRepository.delete(5);
 // console.log(motorizacaoRepository.get(4));
@@ -34,7 +36,7 @@ console.log(motorizacaoRepository.list());
 const carroceria = new Carroceria();
 carroceria.nome = 'Sedan';
 
-// carroceriaRepository.add(carroceria);
+carroceriaRepository.add(carroceria);
 console.log(carroceriaRepository.list());
 // carroceriaRepository.delete(2)
 // console.log(carroceriaRepository.get(5));
@@ -47,9 +49,9 @@ modelo.marca = umaMarca;
 modelo.carroceria = carroceria;
 modelo.portas = 4;
 
-// modeloRepository.add(modelo);
+modeloRepository.add(modelo);
 console.log(modeloRepository.list());
-// modeloRepository.delete(10)
+// modeloRepository.delete(6)
 // console.log(modeloRepository.get(13));
 
 
@@ -58,11 +60,15 @@ pessoa.nome = 'Matheus Silva';
 pessoa.endereco = 'Av. 30 Q51 L03';
 pessoa.telefone = '63992940679';
 pessoa.email = 'matheus@gmail.com';
+pessoa.isPJ = true;
+pessoa.razaoSocial = "MSC"
 pessoa.cnpj = '17.280.952/0001-09';
-pessoa.cpf = '464.499.410-30';
+// pessoa.cpf = '464.499.410-30';  
 
-// pessoaRepository.add(pessoa);
+
+pessoaRepository.add(pessoa);
 console.log(pessoaRepository.list());
+// pessoaRepository.delete(3)
 
 const carro = new Carro();
 carro.modelo = modelo;
@@ -76,6 +82,6 @@ carro.venda = '30.000';
 carro.proprietarioAnterior = pessoa;
 carro.cliente = pessoa;
 
-// carroRepository.add(carro);
-console.log(carroRepository.list());
+carroRepository.add(carro);
+// console.log(carroRepository.list());
 // console.log(carroRepository.get(2))

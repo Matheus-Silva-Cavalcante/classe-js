@@ -14,7 +14,7 @@ export default class Carro {
         return this._modelo;
     };
     set modelo(value){
-        if(!value || value.constructor !== Modelo) throw "O campo modelo precisa ser uma instância da classe " + Modelo.name;
+        if(value && value.constructor !== Modelo) throw "O campo modelo precisa ser uma instância da classe " + Modelo.name;
         this._modelo = value;
     };
 
@@ -109,7 +109,9 @@ export default class Carro {
         return this._proprietarioAnterior;
     };
     set proprietarioAnterior(value){
-        if(!value || value.constructor !== Pessoa) throw "O campo pessoa precisa ser uma instância da classe " + Pessoa.name;
+        if(value && value.constructor !== Pessoa) {
+            throw "O campo proprietarioAnterior precisa ser uma instância da classe " + Pessoa.name;
+        };
 
         this._proprietarioAnterior = value;
     }
@@ -118,7 +120,7 @@ export default class Carro {
         return this._cliente;
     };
     set cliente(value){
-        if(!value || value.constructor !== Pessoa) throw "O campo pessoa precisa ser uma instância da classe " + Pessoa.name;
+        if(value && value.constructor !== Pessoa) throw "O campo cliente precisa ser uma instância da classe " + Pessoa.name;
 
         this._cliente = value;
     };

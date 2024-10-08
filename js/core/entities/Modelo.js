@@ -24,7 +24,7 @@ export default class Modelo {
         return this._marca;
     };
     set marca(value){
-        if(!value || value.constructor !== Marca) throw "O campo marca precisa ser uma instância da classe " + Marca.name;
+        if(value && value.constructor !== Marca) throw "O campo marca precisa ser uma instância da classe " + Marca.name;
         this._marca = value;
     };
 
@@ -32,7 +32,7 @@ export default class Modelo {
         return this._motorizacao;
     };
     set motorizacao(value){
-        if(!value || value.constructor !== Motorizacao) throw "O campo motorização precisa ser uma instâcia da classe " + Motorizacao.name;
+        if(value && value.constructor !== Motorizacao) throw "O campo motorização precisa ser uma instâcia da classe " + Motorizacao.name;
         
         this._motorizacao = value;
     };
@@ -41,7 +41,7 @@ export default class Modelo {
         return this._carroceria;
     };
     set carroceria(value){
-        if(!value || value.constructor !== Carroceria) throw "O campo carroceria precisa ser uma instância da classe " + Carroceria.name;
+        if(value && value.constructor !== Carroceria) throw "O campo carroceria precisa ser uma instância da classe " + Carroceria.name;
         
         this._carroceria = value;
     };

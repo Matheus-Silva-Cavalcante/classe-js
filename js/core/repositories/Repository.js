@@ -22,16 +22,20 @@ export default class Repository{
         }
     }
 
-    _saveData(){
+    _persistData(){
         localStorage.setItem(this._storageKey, JSON.stringify(this._itemsArray));
     }
 
-    add(item){
-        const id = this._generateId();
-        item.id = id;
+    save(item){
+        if(!item.id){
+            const id = this._generateId();
+            item.id = id;
+        }
         const dto = this._mapper.convertToDTO(item);
-        this._itemsArray[id] = dto;
-        this._saveData();
+        this._itemsArray[item.id] = dto;
+        this._persistData();
+        
+        return item.id;
     }
 
     get(id){
@@ -44,7 +48,7 @@ export default class Repository{
 
     delete(index){
         delete this._itemsArray[index];
-        this._saveData();
+        this._persistData();
     }
 
     list(){        

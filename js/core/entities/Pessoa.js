@@ -28,9 +28,11 @@ export default class Pessoa{
         return this._razaoSocial;
     };
     set razaoSocial(value){
+        // console.log(value);
+        if(!value) return;
         if(this._isPJ === false) throw "Razão Social é para pessoa Jurídica";
 
-        if(typeof value != 'string') throw "Nome precisa ser uma string";
+        if(typeof value != 'string') throw "Nome da Razão Social precisa ser uma string";
         if(value.length < 3) throw "O mone precisa ter pelo menos 3 caracteres";
 
         this._razaoSocial = value;
@@ -79,19 +81,21 @@ export default class Pessoa{
         return this._cnpj;
     };
     set cnpj(value) {
-        console.log(this._isPJ, "pessoa jurídica")
+        // console.log(this._isPJ, "pessoa jurídica")
+        if(!value) return;
         if(this._isPJ === false) throw "Não é pssivel colocar o CPF em pessoa Jurídica";
 
         this._cnpj = new CNPJ(value);
     };
 
-    // get cpf(){
-    //     return this._cpf;
-    // };
-    // set cpf(value){
-    //     console.log(this._isPJ, "pessoa física")
-    //     if(this._isPJ === true) throw "Não é possivel colocar o CNPJ em pessoa Física";
+    get cpf(){
+        return this._cpf;
+    };
+    set cpf(value){
+        // console.log(this._isPJ, "pessoa física1")
+        if(!value) return;
+        if(this._isPJ === true) throw "Não é possivel colocar o CNPJ em pessoa Física";
 
-    //     this._cpf = new CPF(value);
-    // };
+        this._cpf = new CPF(value);
+    };
 };

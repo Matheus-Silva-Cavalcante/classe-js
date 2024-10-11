@@ -15,7 +15,7 @@ export default class ModeloMapper{
     convertToEntity(dto){
         const entity = new Modelo();
         entity.id = dto.id;
-        entity.nomeModelo = dto.nomeModelo;        
+        entity.nome = dto.nome;        
         entity.marca = dto.marca ? this._marcaRepository.get(dto.marca) : null;
         entity.motorizacao = dto.motorizacao ? this._motorizacaoRepository.get(dto.motorizacao) : null;
         entity.carroceria = dto.carroceria ? this._carroceriaRepository.get(dto.carroceria) : null;
@@ -27,7 +27,7 @@ export default class ModeloMapper{
     convertToDTO(entity){
         const dto = new ModeloDTO();
         dto.id = entity.id;
-        dto.nomeModelo = entity.nomeModelo;
+        dto.nome = entity.nome;
         dto.marca = entity.marca?.id;
         dto.motorizacao = entity.motorizacao?.id;
         dto.carroceria = entity.carroceria?.id;

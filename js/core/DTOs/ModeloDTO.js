@@ -1,6 +1,6 @@
 export default class ModeloDTO{
     id;
-    nomeModelo;
+    nome;
     marca;
     motorizacao;
     carroceria;

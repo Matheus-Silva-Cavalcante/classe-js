@@ -1,87 +1,58 @@
-import Carro from "./core/entities/Carro.js";
-import Carroceria from "./core/entities/Carroceria.js";
-import Marca from "./core/entities/Marca.js";
-import Modelo from "./core/entities/Modelo.js";
-import Motorizacao from "./core/entities/Motorizacao.js";
-import Pessoa from "./core/entities/Pessoa.js";
-import { marcaRepository, motorizacaoRepository, carroceriaRepository, modeloRepository, pessoaRepository, carroRepository } from "./core/repositories/repositories.js";
+import CarroceriaService from "./core/services/CarroceriaService.js";
+import MarcaService from "./core/services/MarcaService.js";
+import ModeloService from "./core/services/ModeloService.js";
+import MotorizacaoService from "./core/services/MotorizacaoService.js";
 
-window.Pessoa = Pessoa;
+window.marca = new MarcaService();
+window.motorizacao = new MotorizacaoService();
+window.carroceria = new CarroceriaService();
 
-window.marcaRepository = marcaRepository;
-window.motorizacaoRepository = motorizacaoRepository;
-window.carroceriaRepository = carroceriaRepository;
-window.modeloRepository = modeloRepository;
-window.pessoaRepository = pessoaRepository;
-window.carroRepository = carroRepository;
+const marcaService = new MarcaService();
 
-const umaMarca = new Marca();
-umaMarca.nome = 'VolksWagen';
+// const retornaIdMarca = marcaService.salvar('Volvo');
+// console.log({retornaIdMarca});
 
-marcaRepository.add(umaMarca);
-console.log(marcaRepository.list());
-// marcaRepository.delete(2);
-// console.log(marcaRepository.get(6));
+const marcaAlterada = marcaService.alterar(2, 'Volvo');
+console.log(marcaAlterada);
 
+console.log(marcaService.listar());
+console.log(marcaService.get(2));
 
-const motorizacao = new Motorizacao()
-motorizacao.nome = 'Gasolina';
+// marcaService.deletar(2);
 
-motorizacaoRepository.add(motorizacao);
-console.log(motorizacaoRepository.list());
-// motorizacaoRepository.delete(5);
-// console.log(motorizacaoRepository.get(4));
+console.log('<-------------------------->');
 
+const motorizacaoService = new  MotorizacaoService();
 
-const carroceria = new Carroceria();
-carroceria.nome = 'Sedan';
+// const retornaIdMotorizacao = motorizacaoService.salvar('Elétrico');
+// console.log( {retornaIdMotorizacao} );
 
-carroceriaRepository.add(carroceria);
-console.log(carroceriaRepository.list());
-// carroceriaRepository.delete(2)
-// console.log(carroceriaRepository.get(5));
+const motorizacaoAlterada = motorizacaoService.alterar(1, 'Gasolina');
+console.log(motorizacaoAlterada);
 
+console.log(motorizacaoService.listar());
+console.log(motorizacaoService.get(3));
+motorizacaoService.deletar(2);
 
-const modelo = new Modelo();
-modelo.nomeModelo = "rs7";
-modelo.motorizacao = motorizacao;
-modelo.marca = umaMarca;
-modelo.carroceria = carroceria;
-modelo.portas = 4;
+console.log('<-------------------------->');
 
-modeloRepository.add(modelo);
-console.log(modeloRepository.list());
-// modeloRepository.delete(6)
-// console.log(modeloRepository.get(13));
+const carroceriaService = new CarroceriaService();
 
+// const retornaIdCarroceria = carroceriaService.salvar('Suv');
+// console.log({retornaIdCarroceria})
 
-const pessoa = new Pessoa();
-pessoa.nome = 'Matheus Silva';
-pessoa.endereco = 'Av. 30 Q51 L03';
-pessoa.telefone = '63992940679';
-pessoa.email = 'matheus@gmail.com';
-pessoa.isPJ = true;
-pessoa.razaoSocial = "MSC"
-pessoa.cnpj = '17.280.952/0001-09';
-// pessoa.cpf = '464.499.410-30';  
+const carroceriaAlterada = carroceriaService.alterar(1, 'Sedan');
+console.log(carroceriaAlterada);
 
+console.log(carroceriaService.listar());
+console.log(carroceriaService.get(1));
+carroceriaService.deletar(2);
 
-pessoaRepository.add(pessoa);
-console.log(pessoaRepository.list());
-// pessoaRepository.delete(3)
+console.log('<-------------------------->');
 
-const carro = new Carro();
-carro.modelo = modelo;
-carro.anoFabricacao = '2020';
-carro.anoModelo = '2021';
-carro.cor = 'preto';
-carro.placa = 'aaa0a00';
-carro.renavam = '89826110609';
-carro.compra = "20.000";
-carro.venda = '30.000';
-carro.proprietarioAnterior = pessoa;
-carro.cliente = pessoa;
+const modeloService = new ModeloService();
 
-carroRepository.add(carro);
-// console.log(carroRepository.list());
-// console.log(carroRepository.get(2))
+// const retornaIdModelo = modeloService.salvar('Polo', marcaService, motorizacaoService, carroceriaService, '4');
+// console.log({retornaIdModelo})
+
+console.log(modeloService.get(2));

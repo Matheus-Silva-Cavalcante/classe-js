@@ -11,13 +11,13 @@ export default class Modelo {
         this._id = value; 
     };
 
-    get nomeModelo(){
-        return this._nomeModelo;
+    get nome(){
+        return this._nome;
     };
-    set nomeModelo(value){
+    set nome(value){
         if(typeof value != 'string') throw "Nome do modelo precisa ser uma texto";
         if(value.length <= 0) throw "Nome do modelo precisa ter pelo menos um caractere";
-        this._nomeModelo = value;
+        this._nome = value;
     };;
 
     get marca(){

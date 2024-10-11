@@ -16,7 +16,7 @@ const carroceriaMapper = new CarroceriaMapper();
 export const carroceriaRepository = new Repository(carroceriaMapper, 'carroceria');
 
 const modeloMapper = new ModeloMapper(marcaRepository, motorizacaoRepository, carroceriaRepository);
-export const modeloRepository = new Repository(modeloMapper, 'modelo');
+export const    modeloRepository = new Repository(modeloMapper, 'modelo');
 
 const pessoaMapper = new PessoaMapper();
 export const pessoaRepository = new Repository(pessoaMapper, 'pessoa');

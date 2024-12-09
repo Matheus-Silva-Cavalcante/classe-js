@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('../style.css');
 
 *{
     margin: 0;
@@ -24,10 +25,9 @@ main{
 }
 
 .container{
-    max-width: 43rem;
+    max-width: 40rem;
     width: 100%;
-    max-height: 68rem;
-    /* max-height: 50.5rem; */
+    max-height: 65rem;
     height: 100%;
     box-sizing: border-box;
     box-shadow: .1rem .1rem .4rem #939393;
@@ -39,11 +39,10 @@ main{
 .area-acao-top{
     border-radius: 1rem 1rem 0 0;
     background-color: #eeeeee;
-    height: 7rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 4rem;
+    padding: 2rem;
 }
 
 .area-acao-top>h3{
@@ -56,7 +55,18 @@ main{
     gap: 1rem;
 }
 
-.botoes-editar-excluir{
+/* .btn-adicionar{
+    background-color: #3A96FF;
+    color: #696969;
+    font-size: 1.3rem;
+} */
+
+.btn-adicionar:hover{
+    background-color: #0570eb;
+    color: #fff;
+}
+
+.btn-acao{
     transition: .5s;
     width: 3.8rem;
     height: 3.8rem;
@@ -68,27 +78,34 @@ main{
     cursor: pointer;
 }
 
-.btn-excluir-ativo{
-    background-color: #fd6a6a;
+/* .botoes-editar-excluir{
+    
+} */
+
+.botoes-editar-excluir:disabled{
+    opacity: .3;
+    cursor: auto;
 }
 
-.btn-aditar-ativo{
-    background-color: #278afa;
+.botoes-ativo{
+    border: .1rem solid #727272;
 }
 
-.btn-aditar:hover{
-    background-color: #6aaaf2;
+.btn-editar:enabled:hover{
+    background-color: #0570eb;
+    color: #fff;
 }
 
-.btn-excluir:hover{
-    background-color: #ff8c8c;
+.btn-excluir:enabled:hover{
+    background-color: #fb5b5b;
+    color: #fff;
 }
 
 .area-conteudo{
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    padding: 1.1rem 4rem;
+    padding: 2rem;
     overflow: auto;
     flex: 1;
     box-sizing: border-box;
@@ -104,68 +121,55 @@ main{
     border-radius: .5rem;
 }
 
-.conteudo{
+.botao-selecionavel{
     box-sizing: border-box;
     width: 100%;
     padding: 1rem;
     box-shadow: .1rem .1rem .4rem #939393;
+    border: solid .1rem transparent;
     color: #4d4d4d;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: .5rem;
     cursor: pointer;
 }
 
-.conteudo-ativo{
+.botao-selecionavel.selecionado{
+    border: solid .1rem rgb(101, 173, 255);
+}
+
+.botao-selecionavel-ativo{
     border: .1rem solid rgb(101, 173, 255);
 }
 
 .conteudo-texto{
-    flex: 1;
     font-size: 1.5rem;
     display: flex;
     align-items: center;
 }
 
-.hr-conteudo{
-    width: 60%;
-    height: .2rem;
-    background-color: rgb(179, 179, 179);
-    border: none;
+.conteudo-nome{
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 .area-acao-low{
     border-radius: 0 0 1rem 1rem;
     background-color: #eeeeee;
-    height: 7rem;
-    padding: 0 4rem;
+    padding: 2rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.btn-acao{
+.btn-voltar{
     width: 15rem;
     height: 4rem;
     border-radius: 1rem;
     border: none;
     cursor: pointer;
     transition: .5s;
-}
-
-.btn-adicionar{
-    background-color: #3A96FF;
-    color: #fff;
-    font-size: 1.3rem;
-}
-
-.btn-adicionar:hover{
-    background-color: #0570eb;
-}
-
-.btn-voltar{
     background-color: #c1c1c1;
     color: #ffffff;
     font-size: 1.6rem;

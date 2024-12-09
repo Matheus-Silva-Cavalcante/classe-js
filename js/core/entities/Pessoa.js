@@ -29,7 +29,11 @@ export default class Pessoa{
     };
     set razaoSocial(value){
         // console.log(value);
-        if(!value) return;
+        if(!value) {
+            this._razaoSocial = null;
+            return;
+        };
+
         if(this._isPJ === false) throw "Razão Social é para pessoa Jurídica";
 
         if(typeof value != 'string') throw "Nome da Razão Social precisa ser uma string";
@@ -67,12 +71,9 @@ export default class Pessoa{
     };
     set isPJ(value){
         if(typeof value !== "boolean") throw "O campo isPJ precisa ser um boolean";
-            
-        // true > pessoa juridca > nao pode receber o CPF
-        // false > pessoa fisica > nao pode receber o CNPJ
 
-        if(value && this._cpf) throw "Pessoa Jurídica não pode receber o CPF";
-        if(value && this._cnpj) throw "Pessoa Física não pode receber o CNPJ";
+        if(value && this._cpf) throw "Pessoa possui CPF e por isso não pode ser definida como Pessoa Jurídica";
+        if(!value && this._cnpj) throw "Pessoa possui CNPJ e por isso não pode ser definida como Pessoa Física";
 
         this._isPJ = value;     
     };
@@ -82,8 +83,12 @@ export default class Pessoa{
     };
     set cnpj(value) {
         // console.log(this._isPJ, "pessoa jurídica")
-        if(!value) return;
-        if(this._isPJ === false) throw "Não é pssivel colocar o CPF em pessoa Jurídica";
+        if(!value) {
+            this._cnpj = null;
+            return;
+        }
+        
+        if(!this._isPJ) throw "Não é possivel colocar o CNPJ em pessoa Física";
 
         this._cnpj = new CNPJ(value);
     };
@@ -92,9 +97,13 @@ export default class Pessoa{
         return this._cpf;
     };
     set cpf(value){
-        // console.log(this._isPJ, "pessoa física1")
-        if(!value) return;
-        if(this._isPJ === true) throw "Não é possivel colocar o CNPJ em pessoa Física";
+        // console.log(this._isPJ, "pessoa física")
+        if(!value) {
+            this._cpf = null;
+            return;
+        }
+
+        if(this._isPJ) throw "Não é pssivel colocar o CPF em pessoa Jurídica";
 
         this._cpf = new CPF(value);
     };

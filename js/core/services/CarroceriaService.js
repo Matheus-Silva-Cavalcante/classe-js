@@ -1,5 +1,6 @@
 import Carroceria from "../entities/Carroceria.js";
 import { carroceriaRepository } from "../repositories/repositories.js";
+import { modeloService } from "./services.js";
 
 export default class CarroceriaService{
     _verificarCarroceriaExitente(nomeCarroceria){
@@ -7,7 +8,7 @@ export default class CarroceriaService{
 
         listaCarroceria.forEach(carroceria => {
             if(carroceria.nome.toUpperCase() == nomeCarroceria.toUpperCase()) {
-                throw `Já existe uma carroceria com o nome ${nomeCarroceria}`;
+                throw `Erro: Já existe uma carroceria com o nome "${nomeCarroceria}"`;
             }
         });
     }
@@ -27,7 +28,7 @@ export default class CarroceriaService{
     alterar(id, novaCarroceria){
         const carroceria = carroceriaRepository.get(id);
 
-        if(!carroceria) throw `Erro. Não existe uma carroceria com id ${id}`;
+        if(!carroceria) throw `Erro ao alterar a Carroceria: Não existe uma carroceria com id "${id}"`;
 
         if(novaCarroceria !== carroceria.nome) this._verificarCarroceriaExitente(novaCarroceria);
 
@@ -45,7 +46,10 @@ export default class CarroceriaService{
     }
 
     deletar(id){
-        // todo : verificar se está sendo usado
+        const modelos = modeloService.listarPorCarroceria(id);
+
+        if(modelos.length > 0) throw `Erro ao deltar a Carroceria: Não é possivel apagar a Carroceria com o id "${id}" pois há ${modelos.length} Modelo(s) relacionado(s) a ela`;
+        
         carroceriaRepository.delete(id);
     }
 

@@ -1,5 +1,6 @@
 import Modelo from "./Modelo.js";
 import Pessoa from "./Pessoa.js";
+import ValorMonetario from "../valueObjects/ValorMonetario.js";
 
 export default class Carro {
     get id(){
@@ -18,15 +19,19 @@ export default class Carro {
         this._modelo = value;
     };
 
-    _sanitize(value){
-        return value.replace?.(/[^\d]+/g,'');
-    };
+    get complementoCarro(){
+        return this._complementoCarro;
+    }
+    set complementoCarro(value){
+        // if (typeof value != 'string') throw 'O Complemento do Carro deve ser uma string'
+
+        this._complementoCarro = value;
+    }
 
     get anoFabricacao(){
         return this._anoFabricacao; 
     };
     set anoFabricacao(value){
-        value = this._sanitize(value);
         if(isNaN(value)) throw 'Ano de fabricação precisa ser um número';
         if(value < 1900) throw 'Ano de fabricação precisa ser maior que 1900';
 
@@ -40,7 +45,6 @@ export default class Carro {
         return this._anoModelo;
     };
     set anoModelo(value){
-        value = this._sanitize(value);
         if(isNaN(value)) throw "O ano do modelo precisa ser um número";
         if(value < 1900) throw 'Ano do modelo precisa ser maior que 1900';
 
@@ -48,6 +52,15 @@ export default class Carro {
         if(hoje.getFullYear() + 1 < value) throw "Ano de fabricação não é valido";
 
         this._anoModelo = value;
+    };
+
+    get quilometragem(){
+        return this._quilometragem; 
+    };
+    set quilometragem(value){
+        if(isNaN(value)) throw "A Quilometragem do Carro precisa ser um número";
+
+        this._quilometragem = value;
     };
 
     get cor(){
@@ -76,33 +89,31 @@ export default class Carro {
         return this._renavam;
     };
     set renavam(value){
-        value = this._sanitize(value);
         if(isNaN(value)) throw "O renavam precisa ser composto por número";
         if(value.length !== 11) throw "O número do renavam precisa ter 11 caracteres";
 
         this._renavam = value;
     };
 
-    get compra(){
-        return this._compra;
+    get valorCompra(){
+        return this._valorCompra;
     };
-    set compra(value){
-        value = this._sanitize(value);
-        if(isNaN(value)) throw "O valor da compra deve ser composto por número";
-        if(value.length <= 0) throw "O valor de compra é obrigatório";
-        if(value < 10000) throw "O valor de compra não porde ser menor que 1000";
-        this._compra = value;
+    set valorCompra(value){
+        this._valorCompra = new ValorMonetario(value);
     };
 
-    get venda(){
-        return this._venda;
+    get valorAnunciado(){
+        return this._valorAnunciado;
     };
-    set venda(value){
-        value = this._sanitize(value);
-        if(isNaN(value)) throw "O valor de venda deve ser composto por número";
-        if(value.length <= 0) throw "O valor de venda é obrigatório";
-        if(value < 1000) throw "O valor de venda não porde ser menor que 1000";
-        this._venda = value;
+    set valorAnunciado(value){
+        this._valorAnunciado = new ValorMonetario(value)
+    };
+
+    get valorVenda(){
+        return this._valorVenda;
+    };
+    set valorVenda(value){
+        this._valorVenda = new ValorMonetario(value);
     };
 
     get proprietarioAnterior(){

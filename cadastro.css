@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("style.css");
 
 *{
     margin: 0;
@@ -20,21 +21,47 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .container{
     box-shadow: .1rem .1rem .4rem #787878;
     border-radius: 1rem;
-    padding: 5rem 3rem;
     display: flex;
+    max-width: 35rem;
+    width: 100%;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 5rem;
+    box-sizing: border-box;
+}
+
+.area-titulo{
+    box-sizing: border-box;
+    border-radius: 1rem 1rem 0 0;
+    background-color: #eeeeee;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
+}
+
+.area-titulo>h3{
+    font-size: 2.2rem;
+    color: #303030;
+}
+
+.area-acao{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 2rem;
+    gap: 4rem;
 }
 
 .area-cadastro{
-    width: 30rem;
+    width: 100%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -71,19 +98,19 @@ main{
 }
 
 .area-botoes{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 }
 
 .btn-acao{
     font-size: 1.8rem;
-    width: 12rem;
-    height: 3.8rem;
+    min-height: 3.8rem;
     border: none;
     border-radius: 1rem;
     color: #fff;
     transition: .5s;
+    cursor: pointer;
 }
 
 .btn-salvar{

@@ -4,28 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nova Motorização</title>
-    <link rel="stylesheet" href="/cadastro.css">
+    <link rel="stylesheet" href="../../cadastro.css">
 
-    <!-- <script src="/motorizacao/novamotorizacao/novamotorizacao.js" defer></script>
-    <script src="/motorizacao/novamotorizacao/salvarmotorizacao.js" defer></script> -->
+    <script type="module">
+        import {inicializarView} from "../../js/index.js";
+        inicializarView('cadastroMotorizacao');
+    </script>
 </head>
 <body>
-    <main>
+    <div id="carregando">Carregando</div>
+
+    <main style="display: none;">
         <div class="container">
-            <div class="area-cadastro">
-                <label for="textoMotorizacao">Tipo de Motorização :</label>
-
-                <input id="textoMotorizacao" class="input-texto" type="text">
-
-                <div id="inputMotorizacaoVasia" class="alerta-campo-vasio" style="display: none;">
-                    Ops !!
-                </div>
+            <div class="area-titulo">
+                <h3 id="adicionarMotorizacao">Adicionar Motorização</h3>
+                <h3 id="editarMotorizacao" style="display: none;">Editar Motorização</h3>
             </div>
 
-            <div class="area-botoes">
-                <button id="btnSalvarMotorizacao" class="btn-acao btn-salvar">Salvar</button>
+            <div class="area-acao">
+                <div class="area-cadastro">
+                    <label for="nomeMotorizacao">Tipo de Motorização :</label>
 
-                <button id="btnCancelarMotorizacao" class="btn-acao btn-cancelar">Cancelar</button>
+                    <input id="nomeMotorizacao" class="input-texto" type="text">
+                    <input id="idMotorizacao" type="hidden">
+
+                    <div id="inputMotorizacaoVasia" class="alerta-campo-vasio" style="display: none;">
+                        Digite o nome da Motorização.
+                    </div>
+                </div>
+
+                <div class="area-botoes">
+                    <button id="btnSalvarMotorizacao" class="btn-acao btn-salvar">Salvar</button>
+
+                    <button id="btnCancelarMotorizacao" class="btn-acao btn-cancelar">Cancelar</button>
+                </div>
             </div>
         </div>
     </main>

@@ -10,6 +10,7 @@ export default class PessoaMapper{
         entity.telefone = dto.telefone;
         entity.email = dto.email;
         entity.razaoSocial = dto.razaoSocial;
+        entity.isPJ = dto.isPJ;
         entity.cnpj = dto.cnpj;
         entity.cpf = dto.cpf;
 
@@ -24,6 +25,7 @@ export default class PessoaMapper{
         dto.telefone = entity.telefone?.valueOf();
         dto.email = entity.email?.valueOf();
         dto.razaoSocial = entity.razaoSocial;
+        dto.isPJ = entity.isPJ;
         dto.cnpj = entity.cnpj?.valueOf();
         dto.cpf = entity.cpf?.valueOf();
 

@@ -4,55 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcas</title>
-    <link rel="stylesheet" href="/icon/style.css">
-    <link rel="stylesheet" href="/janela.css">
+    <link rel="stylesheet" href="../icon/style.css">
+    <link rel="stylesheet" href="../lista.css">
 
-    <!-- <script src="/motorizacao/novamotorizacao/salvarmotorizacao.js" defer></script>
-    <script src="/motorizacao/motorizacao.js" defer></script> -->
+    <script type="module">
+        import {inicializarView} from "../js/index.js";
+        inicializarView('motorizacao');
+    </script>
 </head>
 <body>
-    <main>
+    <div id="carregando">Carregando</div>
+
+    <main style="display: none;">
         <div class="container">
             <div class="area-acao-top">
                 <h3>Tipo de Motorização</h3>
 
                 <div class="botoes">
-                    <button id="btnEditarMotorizacao" class="icon-editor btn-aditar botoes-editar-excluir"></button>
+                    <button class="btn-acao btn-adicionar icon-plus"></button>
 
-                    <button id="btnExcluirMotorizacao" class="icon-white btn-excluir botoes-editar-excluir"></button>
+
+                    <button id="btnEditarMotorizacao" class="btn-acao icon-editor btn-editar botoes-editar-excluir"></button>
+
+                    <button id="btnExcluirMotorizacao" class="btn-acao icon-white btn-excluir botoes-editar-excluir"></button>
                 </div>
             </div>
 
-            <div class="area-conteudo">
-                <div class="div-conteudo">
-                    <div class="conteudo">Gasolina</div>
-                </div>
+            <div class="area-conteudo">                
+                <div class="botao-selecionavel motorizacao">Gasolina</div>
 
-                <div class="div-conteudo">
-                    <div class="conteudo">Diesel</div>
-                </div>
+                <div class="botao-selecionavel motorizacao">Diesel</div>
 
-                <div class="div-conteudo">
-                    <div class="conteudo">flex - Gasolina e álcoo</div>
-                </div>
+                <div class="botao-selecionavel motorizacao">flex - Gasolina e álcoo</div>
 
-                <div class="div-conteudo">
-                    <div class="conteudo">Elétrico</div>
-                </div>
+                <div class="botao-selecionavel motorizacao">Elétrico</div>
 
-                <div class="div-conteudo">
-                    <div class="conteudo">Híbrido</div>
-                </div>
+                <div class="botao-selecionavel motorizacao">Híbrido</div>
 
-                <div class="div-conteudo">
-                    <div class="conteudo">GNV</div>
-                </div>
+                <div class="botao-selecionavel motorizacao">GNV</div>
             </div>
 
             <div class="area-acao-low">
-                <button class="btn-acao btn-adicionar" onclick="location.href= '/motorizacao/novamotorizacao/novamotorizasao.html'">Adicionar Motorização</button>
-
-                <button class="btn-acao btn-voltar" onclick="location.href= '/index.html'">Voltar</button>
+                <button class="btn-voltar">Voltar</button>
             </div>
         </div>
     </main>

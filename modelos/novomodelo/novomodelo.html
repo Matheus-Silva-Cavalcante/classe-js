@@ -4,33 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Modelo</title>
-    <link rel="stylesheet" href="/modelos/novomodelo/novomodelo.css">
+    <link rel="stylesheet" href="novomodelo.css">
 
-    <!-- <script src="/marcas/novamarca/salvarmarca.js" defer></script>
-    <script src="/motorizacao/novamotorizacao/salvarmotorizacao.js" defer></script>
-    <script src="/carroceria/novacarroceria/salvarcarroceria.js" defer></script>
-    <script src="/modelos/novomodelo/salvarmodelo.js" defer></script>
-    <script src="/modelos/novomodelo/novomodelo.js" defer></script> -->
+    <script type="module">
+        import {inicializarView} from "../../js/index.js";
+        inicializarView('cadastroModelo');
+    </script>
 </head>
-<body>    
-    <div class="container">
+
+<body>
+    <div id="carregando">Carregando</div>
+    
+    <div class="container" style="display: none;">
         <div class="area-titulo">
-            <h3>Cadastro de Modelo</h3>
+            <h3 id="adicionarModelo">Cadastro de Modelo</h3>
+            <h3 id="editarModelo" style="display: none;">Editar de Modelo</h3>
         </div>
 
         <div class="area-conteudo">
             <div class="area-cadastro">
                 <label for="nomeModelo">Nome do Modelo :</label>
                 <input class="input-select" id="nomeModelo" type="text" placeholder="Nome do Carro ?">
+                <input id="idModelo" type="hidden">
 
                 <div id="inputModeloVasia" class="alerta-campo-vasio" style="display: none;">
-                    Nome do Carro Obrigatoria !!
+                    Nome do Carro é Obrigatorio.
                 </div>
             </div>
 
             <div class="area-cadastro">
                 <label for="nomeMarcas">Marca :</label>
-                <select class="input-select nome-marca" name="" id="nomeMarcas">
+                <select class="input-select nome-marca" id="idMarca">
                     <option>Volkswagen</option>
                     <option>Audi</option>
                     <option>Porsche</option>
@@ -39,7 +43,7 @@
 
             <div class="area-cadastro">
                 <label for="nomeMotorizacao">Tipos de Motorização :</label>
-                <select class="input-select nome-motor" name="" id="nomeMotorizacao">
+                <select class="input-select nome-motor" id="idMotorizacao">
                     <option>flex - Gasolina e álcoo</option>
                     <option>Gasolina</option>
                     <option>Diesel</option>
@@ -48,7 +52,7 @@
 
             <div class="area-cadastro">
                 <label for="nomeCarroceria">Tipo de Carroceria :</label>
-                <select class="input-select nome-carrocaria" name="" id="nomeCarroceria">
+                <select class="input-select nome-carrocaria" id="idCarroceria">
                     <option>Sedan</option>
                     <option>SUV</option>
                     <option>Hatchback</option>
@@ -57,10 +61,10 @@
 
             <div class="area-cadastro">
                 <label for="numeroPorta">Número de Portas</label>
-                <input class="input-select" id="numeroPorta" type="number" placeholder="Quantas Portas ?">
+                <input class="input-select" id="numeroPortas" type="number" placeholder="Quantas Portas ?">
 
-                <div id="inputPotaloVasia" class="alerta-campo-vasio" style="display: none;">
-                    Quantidade de Portas Obrigatoria !!
+                <div id="inputPortaVasia" class="alerta-campo-vasio" style="display: none;">
+                    A quantidade de Portas é Obrigatorio.
                 </div>
             </div>
         </div>

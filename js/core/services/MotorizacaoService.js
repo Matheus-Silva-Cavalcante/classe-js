@@ -1,5 +1,6 @@
 import Motorizacao from "../entities/Motorizacao.js";
 import { motorizacaoRepository } from "../repositories/repositories.js";
+import { modeloService } from "./services.js";
 
 export default class MotorizacaoService{
     _verificarMotorizacaoExistente(nomeMotorizacao){
@@ -7,7 +8,7 @@ export default class MotorizacaoService{
 
         listaMotorizacao.forEach(motorizacao =>{
             if(motorizacao.nome.toUpperCase() == nomeMotorizacao.toUpperCase()){
-                throw `Já existe uma Motorização com o nome ${nomeMotorizacao}`;
+                throw `Erro: Já existe uma Motorização com o nome ${nomeMotorizacao}`;
             }
         });
     }
@@ -24,7 +25,7 @@ export default class MotorizacaoService{
     alterar(id, novaMotorizacao){
         const motorizacao = motorizacaoRepository.get(id);
 
-        if(!motorizacao) throw `Erro. não existe uma motorização com id ${id}`;
+        if(!motorizacao) throw `Erro ao alterar a Motorização: Não existe uma motorização com id "${id}"`;
 
         if(novaMotorizacao.toUpperCase() !== motorizacao.nome.toUpperCase()) this._verificarMotorizacaoExistente(novaMotorizacao);
 
@@ -42,7 +43,10 @@ export default class MotorizacaoService{
     }
 
     deletar(id){
-        // todo : verifica se está sendo usado
+        const modelos = modeloService.listarPorMotorizacao(id);
+
+        if(modelos.length > 0) throw `Erro ao deletar a Motorização: Não é possível apagar a Motorização de id "${id}" pois há "${modelos.length}" Modelo(s) relacionado(s) a ela.`;
+        
         motorizacaoRepository.delete(id);
     }
 

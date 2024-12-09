@@ -1,5 +1,6 @@
 import Marca from "../entities/Marca.js";
 import { marcaRepository } from "../repositories/repositories.js";
+import { modeloService } from "./services.js";
 
 export default class MarcaService{
     _verificarMarcaExistente(nomeMarca){
@@ -7,11 +8,17 @@ export default class MarcaService{
 
         listaMarca.forEach(marca => {
             if (marca.nome.toUpperCase() == nomeMarca.toUpperCase()) {
-                throw `Já existe uma Marca com nome ${nomeMarca}`;
+                throw `Erro: Já existe uma Marca com nome "${nomeMarca}"`;
             } 
         });
     }
 
+    /**
+     * Salva uma nova marca
+     * 
+     * @param {string} nomeMarca 
+     * @returns {number}
+     */
     salvar(nomeMarca) {
         this._verificarMarcaExistente(nomeMarca);
         const novaMarca = new Marca();
@@ -22,10 +29,17 @@ export default class MarcaService{
         return id;
     }
 
+    /**
+     * ...
+     * 
+     * @param {number} id 
+     * @param {string} novoNome 
+     * @returns {Marca}
+     */
     alterar(id, novoNome) {
         const marca = marcaRepository.get(id)
 
-        if(!marca) throw `Erro ao alterar. Não existe uma Marca com id: ${id}`;
+        if(!marca) throw `Erro ao alterar a Marca: Não existe uma Marca com id: "${id}"`;
 
         if(novoNome.toUpperCase() !== marca.nome.toUpperCase()) this._verificarMarcaExistente(novoNome);
 
@@ -43,7 +57,10 @@ export default class MarcaService{
     }
 
     deletar(id) {
-        // todo : verificar se está sendo usado
+        const modelos = modeloService.listarPorMarca(id);
+
+        if(modelos.length > 0) throw `Erro ao deletar a Marca: Não é possível apagar a Marca de id "${id}" pois há ${modelos.length} Modelo(s) relacionado(s) a ela.`;
+
         marcaRepository.delete(id);
     }
 

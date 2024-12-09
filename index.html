@@ -5,190 +5,293 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CarangaShop</title>
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="/icon/style.css">
+    <link rel="stylesheet" href="icon/style.css">
 
-    <script type="module" src="/js/index.js" defer></script>
+    <!-- <script type="module" src="/js/index.js"></script> -->
+
+    <script type="module">
+        import {inicializarView} from "./js/index.js";
+        inicializarView('carro');
+    </script>
 </head>
-<body>    
-    <nav>
-        <div class="container-nav">
-            <h1 class="nav-titulo">CarangaShop</h1>
+<body>
+    <div id="carregando">Carregando</div>
+    
+    <main style="display: none;">
+        <nav>
+            <div class="container-nav">
+                <h1 class="nav-titulo">CarangaShop</h1>
+    
+                <div class="link-direcionamento">
+                    <a href="pessoa/pessoa.html">Pessoas</a>
+    
+                    <hr class="hr-link-direcionamento">
+                    <a href="modelos/modelos.html">Modelos</a>
+    
+                    <hr class="hr-link-direcionamento">
+                    <a href="marcas/marcas.html">Marcas</a>                
+    
+                    <hr class="hr-link-direcionamento">
+                    <a href="motorizacao/motorizacao.html">Tipos Motorização</a>
+    
+                    <hr class="hr-link-direcionamento">
+                    <a href="carroceria/carroceria.html">Tipos Carroceria</a>
+                </div>
 
-            <div class="link-direcionamento">
-                <a href="/pessoa/pessoa.html">Pessoas</a>
+                <div class="link-direcionamento-mobile">
+                    <input id="opcoes-links" class="botao-opcoes" type="checkbox">
+                    <label for="opcoes-links">
+                        <h4 class="opcoes-links-texto">
+                            Cadastros
+                            <div class="icon-seta"></div>
+                        </h4>
+                    </label>
 
-                <hr class="hr-link-direcionamento">
-                <a href="/marcas/marcas.html">Marcas</a>
-
-                <hr class="hr-link-direcionamento">
-                <a href="/modelos/modelos.html">Modelos</a>
-
-                <hr class="hr-link-direcionamento">
-                <a href="/motorizacao/motorizacao.html">Tipos Motorização</a>
-
-                <hr class="hr-link-direcionamento">
-                <a href="/carroceria/carroceria.html">Tipos Carroceria</a>
+                    <ul class="listas-links">
+                        <li class="item-lista">
+                            <a class="listas-links-direcionamento" href="pessoa/pessoa.html">Pessoas</a>
+                        </li>
+    
+                        <li>
+                            <a class="listas-links-direcionamento" href="modelos/modelos.html">Modelos</a>
+                        </li>
+                        
+                        <li >
+                            <a class="listas-links-direcionamento" href="marcas/marcas.html">Marcas</a>                
+                        </li>
+                        
+                        <li>
+                            <a class="listas-links-direcionamento" href="motorizacao/motorizacao.html">Tipos Motorização</a>
+                        </li>
+                        
+                        <li>
+                            <a class="listas-links-direcionamento" href="carroceria/carroceria.html">Tipos Carroceria</a>
+                        </li>                        
+                    </ul>
+                    
+                </div>
             </div>
-        </div>
-    </nav>
-
-    <section class="campo-busca">        
-        <input class="input-busca" type="text">   
+        </nav>
+    
+        <section class="controles">
+            <div class="campo-busca">
+                <input class="input-busca" type="text" placeholder="Buscar Carro">   
+                
+                <button id="btnBuscarCarro" class="icon-lupa"></button>
+            </div>
+    
+            <div class="filtro-botoes">
+                <div class="filtro">
+                    <select class="select-busca" id="selectCarroceria">
+                        
+                    </select>
         
-        <button class="icon-lupa"></button>
-    </section>
-    
-    <section class="container">
-        <div class="area-divugacao">
-            <div class="divugacao">
-                <div class="divugacao-img">
-                    <img class="divugacao-img-carro" src="/img/carro2.svg" alt="Foto do carro a venda">
-                </div>
-
-                <div class="divugacao-especificacao">
-                    <div class="especificacao-modelo">Audi Q3</div>
-
-                    <hr class="hr-especificacao">
-                    <div class="div-especificacao">
-                        <div class="especificacao">Audi</div>
+                    <select class="select-busca" id="selectMotorizacao">
                         
-                        <div class="especificacao">1.4 TFSI</div>
-
-                        <div class="especificacao">flex - Gasolina e álcoo</div>
-
-                        <div class="especificacao">SUV</div>
-
-                        <div class="especificacao">Preto</div>
-
-                    </div>
-
-                    <div class="especificacao-preco-km">
-                        <div class="especificacao-km">62.000km</div>
-    
-                        <div class="especificacao-preco">R$ 120.000</div>
-                    </div>
-                </div>
-            </div>   
-
-            <div class="divugacao">
-                <div class="divugacao-img">
-                    <img class="divugacao-img-carro" src="/img/carro2.svg" alt="Foto do carro a venda">
-                </div>
-
-                <div class="divugacao-especificacao">
-                    <div class="especificacao-modelo">polo</div>
-
-                    <hr class="hr-especificacao">
-                    <div class="div-especificacao">
-                        <div class="especificacao">Volkswagen</div>
+                    </select>
+        
+                    <select class="select-busca" id="selectMarca">
                         
-                        <div class="especificacao">Polo Comfortline 1.0 TSI</div>
-
-                        <div class="especificacao">flex - Gasolina e álcoo</div>
-
-                        <div class="especificacao">Hatchback</div>
-
-                        <div class="especificacao">Branco</div>
-
-                    </div>
-
-                    <div class="especificacao-preco-km">
-                        <div class="especificacao-km">20.000km</div>
-    
-                        <div class="especificacao-preco">R$ 80.000</div>
-                    </div>
-                </div>
-            </div>   
-
-            <div class="divugacao">
-                <div class="divugacao-img">
-                    <img class="divugacao-img-carro" src="/img/carro2.svg" alt="Foto do carro a venda">
-                </div>
-
-                <div class="divugacao-especificacao">
-                    <div class="especificacao-modelo">Modelo</div>
-
-                    <hr class="hr-especificacao">
-                    <div class="div-especificacao">
-                        <div class="especificacao">Marca</div>
+                    </select>
+        
+                    <select class="select-busca" id="selectModelos">
                         
-                        <div class="especificacao">Polo Comfortline 1.0 TSI</div>
+                    </select>
 
-                        <div class="especificacao">Motorização</div>
-
-                        <div class="especificacao">Carroceria</div>
-
-                        <div class="especificacao">Branco</div>
-
-                    </div>
-
-                    <div class="especificacao-preco-km">
-                        <div class="especificacao-km">20.000km</div>
+                    <button id="limparFiltro" class="limpar-filtro" style="display: none;">Limpar Filtro</button>
+                </div>       
+        
+                <div class="botoes">
+                    <button id="btnAdicionarCarro" class="botoes-acao btn-adicionar-modelo icon-plus"></button>
+        
+                    <button id="btnEditarCarro" class="botoes-acao botoes-icon icon-editor"></button>
+        
+                    <button id="btnExclirCarro" class="botoes-acao botoes-icon icon-white"></button> 
+                </div>
+            </div>
+        </section>
     
-                        <div class="especificacao-preco">R$ 80.000</div>
-                    </div>
-                </div>
-            </div>                                           
-            <div class="divugacao">
-                <div class="divugacao-img">
-                    <img class="divugacao-img-carro" src="/img/carro2.svg" alt="Foto do carro a venda">
-                </div>
+        <section class="container">
+            <div class="area-divugacao">
 
-                <div class="divugacao-especificacao">
-                    <div class="especificacao-modelo">Modelo</div>
-
-                    <hr class="hr-especificacao">
-                    <div class="div-especificacao">
-                        <div class="especificacao">Marca</div>
-                        
-                        <div class="especificacao">Polo Comfortline 1.0 TSI</div>
-
-                        <div class="especificacao">Motorização</div>
-
-                        <div class="especificacao">Carroceria</div>
-
-                        <div class="especificacao">Branco</div>
-
+                <div class="botao-selecionavel divugacao carro">
+                    <div class="divugacao-img">
+                        <img class="divugacao-img-carro" src="img/carro2.svg" alt="Foto do carro a venda">
                     </div>
 
-                    <div class="especificacao-preco-km">
-                        <div class="especificacao-km">20.000km</div>
+                    <div class="divugacao-especificacao"> <!-- card -->
+                        <div class="informaceos" id="informacoesCarro"> <!-- card -->
+                            <div class="especificacao-modelo">Audi Q3</div>
     
-                        <div class="especificacao-preco">R$ 80.000</div>
+                            <div class="div-especificacao">
+                                <div class="especificacao">Audi</div>
+                                
+                                <div class="especificacao">1.4 TFSI</div>
+        
+                                <div class="especificacao">flex - Gasolina e álcoo</div>
+        
+                                <div class="especificacao">SUV</div>
+        
+                                <div class="especificacao">Preto</div>
+        
+                            </div>
+        
+                            <div class="especificacao-preco-km">
+                                <div class="preco-km">
+                                    <div class="especificacao-km">62.000km</div>
+            
+                                    <div class="especificacao-preco">R$ 120.000</div>
+                                </div>
+                                
+
+                                <div class="vendido">Vendido</div>
+                            </div>
+                        </div>
+
+                        <div class="informaceos" id="detalhesCarro" style="display: none;">    
+                            <div class="div-especificacao">
+                                <div class="especificacao">ABT3B35</div>
+
+                                <div class="especificacao">07521414781</div>
+
+                                <div class="especificacao">nome cliente: Maria Silva</div>
+                                
+                                <div class="especificacao">proprietario anterior: João Pedro</div>
+        
+                                <div class="especificacao">valor de compra: R$ 110.000,00</div>
+
+                                <div class="especificacao">valor de venda: R$ 125.000,00</div>
+        
+                                <div class="especificacao">ano modelo: 2019</div>
+        
+                                <div class="especificacao">ano Fabricação: 2020</div>
+        
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>                                           
-            <div class="divugacao">
-                <div class="divugacao-img">
-                    <img class="divugacao-img-carro" src="/img/carro2.svg" alt="Foto do carro a venda">
-                </div>
+                
+                
+                <div class="botao-selecionavel divugacao carro">
+                    <div class="divugacao-img">
+                        <!-- <button class="btn-detalhes-carro">?</button> -->
 
-                <div class="divugacao-especificacao">
-                    <div class="especificacao-modelo">Modelo</div>
-
-                    <hr class="hr-especificacao">
-                    <div class="div-especificacao">
-                        <div class="especificacao">Marca</div>
-                        
-                        <div class="especificacao">Polo Comfortline 1.0 TSI</div>
-
-                        <div class="especificacao">Motorização</div>
-
-                        <div class="especificacao">Carroceria</div>
-
-                        <div class="especificacao">Branco</div>
-
+                        <img class="divugacao-img-carro" src="img/carro2.svg" alt="Foto do carro a venda">
                     </div>
-
-                    <div class="especificacao-preco-km">
-                        <div class="especificacao-km">20.000km</div>
     
-                        <div class="especificacao-preco">R$ 80.000</div>
+                    <div class="divugacao-especificacao">
+                        <div class="informaceos" id="informacoesCarro" >
+                            <div class="especificacao-modelo">Audi Q3</div>
+    
+                            <div class="div-especificacao">
+                                <div class="especificacao">Audi</div>
+                                
+                                <div class="especificacao">1.4 TFSI</div>
+        
+                                <div class="especificacao">flex - Gasolina e álcoo</div>
+        
+                                <div class="especificacao">SUV</div>
+        
+                                <div class="especificacao">Preto</div>
+        
+                            </div>
+        
+                            <div class="especificacao-preco-km">
+                                <div class="preco-km">
+                                    <div class="especificacao-km">62.000km</div>
+            
+                                    <div class="especificacao-preco">R$ 120.000</div>
+                                </div>
+                                
+
+                                <div class="vendido">Vendido</div>
+                            </div>
+                        </div>
+
+                        <div  class="informaceos" id="detalhesCarro" style="display: none;">    
+                            <div class="div-especificacao">
+                                <div class="especificacao">placa do carro</div>
+
+                                <div class="especificacao">renavam</div>
+
+                                <div class="especificacao">nome cliente</div>
+                                
+                                <div class="especificacao">mome proprietario anterior</div>
+        
+                                <div class="especificacao">valor de compra</div>
+
+                                <div class="especificacao">valor de venda</div>
+        
+                                <div class="especificacao">ano modelo</div>
+        
+                                <div class="especificacao">ano Fabricação</div>
+        
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>                                           
-                                   
-        </div>
-    </section>
+
+
+                <div class="botao-selecionavel divugacao carro">
+                    <div class="divugacao-img">
+                        <!-- <button class="btn-detalhes-carro">?</button> -->
+
+                        <img class="divugacao-img-carro" src="img/carro2.svg" alt="Foto do carro a venda">
+                    </div>
+    
+                    <div class="divugacao-especificacao">
+                        <div class="informaceos" id="informacoesCarro" >
+                            <div class="especificacao-modelo">Audi Q3</div>
+    
+                            <div class="div-especificacao">
+                                <div class="especificacao">Audi</div>
+                                
+                                <div class="especificacao">1.4 TFSI</div>
+        
+                                <div class="especificacao">flex - Gasolina e álcoo</div>
+        
+                                <div class="especificacao">SUV</div>
+        
+                                <div class="especificacao">Preto</div>
+        
+                            </div>
+        
+                            <div class="especificacao-preco-km">
+                                <div class="preco-km">
+                                    <div class="especificacao-km">62.000km</div>
+            
+                                    <div class="especificacao-preco">R$ 120.000</div>
+                                </div>
+                                
+
+                                <div class="vendido">Vendido</div>
+                            </div>
+                        </div>
+
+                        <div  class="informaceos" id="detalhesCarro" style="display: none;">    
+                            <div class="div-especificacao">
+                                <div class="especificacao">placa do carro</div>
+
+                                <div class="especificacao">renavam</div>
+
+                                <div class="especificacao">nome cliente</div>
+                                
+                                <div class="especificacao">mome proprietario anterior</div>
+        
+                                <div class="especificacao">valor de compra</div>
+
+                                <div class="especificacao">valor de venda</div>
+        
+                                <div class="especificacao">ano modelo</div>
+        
+                                <div class="especificacao">ano Fabricação</div>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

@@ -4,28 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nova Marca</title>
-    <link rel="stylesheet" href="/cadastro.css">
+    <link rel="stylesheet" href="../../cadastro.css">
 
-    <!-- <script src="/carroceria/novacarroceria/novacarroceria.js" defer></script>
-    <script src="/carroceria/novacarroceria/salvarcarroceria.js" defer></script> -->
+    <script type="module">
+        import {inicializarView} from "../../js/index.js";
+        inicializarView('cadastroCarroceria');
+    </script>
 </head>
 <body>
-    <main>
+    <div id="carregando">Carregando</div>
+
+    <main style="display: none;">
         <div class="container">
-            <div class="area-cadastro">
-                <label for="textoCarroceria">Tipo de Carroceria :</label>
-
-                <input id="textoCarroceria" class="input-texto" type="text">
-
-                <div id="inputCarroceriaVasia" class="alerta-campo-vasio" style="display: none;">
-                    Ops !!
-                </div>
+            <div class="area-titulo">
+                <h3 id="adicionarCarroceria">Adicionar Carroceria</h3>
+                <h3 id="editarCarroceria" style="display: none;">Editar Carroceria</h3>
             </div>
 
-            <div class="area-botoes">
-                <button id="btnSalvarCarroceria" class="btn-acao btn-salvar">Salvar</button>
+            <div class="area-acao">
+                <div class="area-cadastro">
+                    <label for="nomeCarroceria">Tipo de Carroceria :</label>
 
-                <button id="btnCancelarCarroceria" class="btn-acao btn-cancelar" >Cancelar</button>
+                    <input id="nomeCarroceria" class="input-texto" type="text">
+                    <input id="idCarroceria" type="hidden">
+
+                    <div id="inputCarroceriaVasia" class="alerta-campo-vasio" style="display: none;">
+                        Digite o nome da Carroceria.
+                    </div>
+                </div>
+
+                <div class="area-botoes">
+                    <button id="btnSalvarCarroceria" class="btn-acao btn-salvar">Salvar</button>
+
+                    <button id="btnCancelarCarroceria" class="btn-acao btn-cancelar" >Cancelar</button>
+                </div>
             </div>
         </div>
     </main>

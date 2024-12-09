@@ -4,47 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar nova Pessoa</title>
-    <link rel="stylesheet" href="/pessoa/novapessoa/novapessoa.css">
+    <link rel="stylesheet" href="novapessoa.css">
+
+    <script type="module">
+        import {inicializarView} from "../../js/index.js";
+        inicializarView('cadastroPessoa');
+    </script>
 </head>
-<body>    
-    <div class="container">
+<body>
+    <div id="carregando">Carregando</div>    
+
+    <div class="container" style="display: none;">
         <div class="area-titulo">
-            <h3>Cadastro de Pessoa</h3>
+            <h3 id="adicionarPessoa">Cadastro de Pessoa</h3>
+            <h3 id="editarPessoa" style="display: none;">Editar Pessoa</h3>
         </div>
 
         <div class="area-conteudo">
             <div class="area-cadastro">
                 <label for="tipoPessoa">Tipo de Pessoa :</label>
-                <select class="input-select" name="" id="tipoPessoa">
-                    <option>Física</option>
-                    <option>Jurídica</option>
+                <select class="input-select" id="tipoPessoa">
+                    <option id="tipoPessoaFisica" value="false">Física</option>
+                    <option id="tipoPessoaJuridica" value="true">Jurídica</option>
                 </select>
             </div>
 
             <div class="area-cadastro">
                 <label for="nomePessoa">Nome Completo :</label>
                 <input class="input-select" id="nomePessoa" type="text" placeholder="Nome Completo">
+                <input id="idPessoa" type="hidden">
 
                 <div id="inputPessoaVasia" class="alerta-campo-vasio" style="display: none;">
-                    Nome Obrigatória !
-                </div>
-            </div>
-
-            <div class="area-cadastro" style="display: none;">
-                <label for="nomeFantasia">Nome Fantasia :</label>
-                <input class="input-select" id="nomeFantasia" type="text" placeholder="Nome Fantasia">
-
-                <div id="inputPessoaVasia" class="alerta-campo-vasio" style="display: none;">
-                    Nome Obrigatória !
-                </div>
-            </div>
-
-            <div class="area-cadastro" style="display: none;">
-                <label for="razaoSocial">Razão Social :</label>
-                <input class="input-select" id="razaoSocial" type="text" placeholder="Razão Social">
-
-                <div id="inputRazaoSocialVasia" class="alerta-campo-vasio" style="display: none;">
-                    Razão Social Obrigatória !
+                    O Nome é Obrigatória.
                 </div>
             </div>
 
@@ -53,8 +44,7 @@
                 <input class="input-select" id="endereco" type="text" placeholder="Rui, Avenida, etc...">
                 
                 <div id="inputEnderecoVasia" class="alerta-campo-vasio" style="display: none;">
-                    Endereço é Obrigatório !
-                    Obrigatório
+                    O Endereço é Obrigatório.
                 </div>
             </div>
 
@@ -63,7 +53,7 @@
                 <input class="input-select" id="telefone" type="tel" placeholder="Celular ou fixo">
 
                 <div id="inputTelefoneVasia" class="alerta-campo-vasio" style="display: none;">
-                    Telefone é Obrigatório !
+                    O Telefone para contato é Obrigatório.
                 </div>
             </div>
 
@@ -72,25 +62,34 @@
                 <input class="input-select" id="email" type="email" placeholder="Escreva seu melhor Email">
 
                 <div id="inputEmailVasia" class="alerta-campo-vasio" style="display: none;">
-                    Email é Obrigatório !
+                    O Email é Obrigatório.
                 </div>
             </div>
 
-            <div class="area-cadastro">
+            <div id="divCPF" class="area-cadastro">
                 <label for="cpf">CPF :</label>
                 <input class="input-select" id="cpf" type="tel" placeholder="000.000.000-00">
 
                 <div id="inputCpfVasia" class="alerta-campo-vasio" style="display: none;">
-                    CPF é Obrigatório !
+                    O CPF é Obrigatório.
                 </div>
             </div>
 
-            <div class="area-cadastro" style="display: none;">
+            <div id="divCNPJ" class="area-cadastro" style="display: none;">
                 <label for="cnpj">CNPJ :</label>
                 <input class="input-select" id="cnpj" type="tel" placeholder="00.000.000/0000-00">
 
-                <div id="inputCpfVasia" class="alerta-campo-vasio" style="display: none;">
-                    CNPJ é Obrigatório !
+                <div id="inputCnpjVasia" class="alerta-campo-vasio" style="display: none;">
+                    O CNPJ é Obrigatório.
+                </div>
+            </div>
+
+            <div id="divAreaSocial" class="area-cadastro" style="display: none;">
+                <label for="razaoSocial">Razão Social :</label>
+                <input class="input-select" id="razaoSocial" type="text" placeholder="Razão Social">
+
+                <div id="inputRazaoSocialVasia" class="alerta-campo-vasio" style="display: none;">
+                    A Razão Social é Obrigatória.
                 </div>
             </div>
         </div>
@@ -98,7 +97,7 @@
         <div class="area-botoes">
             <button id="btnSalvarPessoa" class="btn-acao btn-salvar">Salvar</button>
 
-            <button id="btnCancelarPessoa" class="btn-acao btn-cancelar" onclick="location.href= '/pessoa/pessoa.html'">Cancelar</button>
+            <button id="btnCancelarPessoa" class="btn-acao btn-cancelar">Cancelar</button>
         </div>
     </div>
 </body>

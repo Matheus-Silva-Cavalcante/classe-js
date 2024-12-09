@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("style.css");
 
 *{
     padding: 0;
@@ -6,8 +7,48 @@
     font-family: "Montserrat", sans-serif;
 }
 
+/* card */
+
+.card.rotating-card{
+    perspective: 100rem;
+    width: 100%;
+    height: 100%;
+}
+
+.card-side{
+    transition: all 0.8s ease;
+    backface-visibility: hidden;
+    position: relative;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+}
+
+.front.back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.card-side.back {
+    transform: rotateY(-180deg);
+}
+
+.card:hover .card-side.front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .card-side.back {
+    transform: rotateY(0deg);
+}
+
+/* card */
+
 html{
     font-size: 10px;
+    height: 100%;
 }
 
 body{
@@ -27,6 +68,15 @@ body{
 ::-webkit-scrollbar-thumb{
     background-color:#e4e4e4;
     border-radius: .5rem;
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
 }
 
 nav{
@@ -78,15 +128,101 @@ nav{
     border-radius: 1rem 1rem;
 }
 
+.link-direcionamento-mobile{
+    display: none;
+}
+
+.botao-opcoes{
+    display: none;
+}
+
+.listas-links{
+    display: none;
+    /* position: absolute;
+    top: 100%; */
+}
+
+li>a{
+    text-decoration: none;
+    color: #424242;
+    font-size: 1.5rem;
+}
+
+.img-seta-select{
+    color: #3A96FF;
+    font-size: 1rem;
+}
+
+.icon-seta{
+    font-size: .8rem;
+}
+
+
+
+
+
+
+.controles{
+    width: 100%;
+    max-width: 100rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn-adicionar-modelo{
+    background-color: #3A96FF;
+    color: #fefefe;
+}
+
+.btn-adicionar-modelo:hover{
+    background-color: #0570eb;
+}
+
+.filtro-botoes{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filtro{
+    display: flex;
+    gap: 1rem;
+}
+
+.limpar-filtro{
+    border: none;
+    box-shadow: .1rem .1rem .4rem #d1d1d1;
+    border-radius: 1rem;
+    background-color: #ffe6e6;
+    padding: 1rem;
+}
+
+.select-busca{
+    padding: 0 .5rem;
+    min-width: 12rem;
+    border: none;
+    box-shadow: .1rem .1rem .4rem #d1d1d1;
+    border-radius: 1rem;
+    outline: transparent;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.select-busca.alterado{
+    background-color: #edf1f6;
+}
+
 .campo-busca{
     width: 100%;
-    max-width: 60rem;
+    max-width: 100rem;
     display: flex;
     align-items: center;
     position: relative;
 }
 
 .campo-busca>button{
+    outline: none;
     cursor: pointer;
     font-size: 1.8rem;
     color: rgb(58, 150, 255);
@@ -96,6 +232,11 @@ nav{
     height: 2.5rem;
     position: absolute;
     right: 1rem;
+    transition: .5s;
+}
+
+.icon-lupa:hover{
+    color: #0570eb;
 }
 
 .input-busca{
@@ -117,8 +258,52 @@ nav{
 .container{
     display: flex;
     flex-direction: column;
+    gap: 1rem;
     width: 100%;
     max-width: 100rem;
+    flex: 1;
+    overflow: auto;
+}
+
+.botoes{
+    display: flex;
+    gap: 1rem;
+}
+
+.botoes-acao{
+    transition: .5s;
+    width: 3.8rem;
+    height: 3.8rem;
+    border: none;
+    border-radius: 1rem;
+    
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: .1rem .1rem .4rem #d1d1d1;
+}
+
+.botoes-icon{
+    color: #4d4d4d;
+    background-color: #ededed;
+}
+
+.botoes-icon:enabled:hover{
+    background-color: #cdcdcd;
+}
+
+.botoes-acao:disabled{
+    opacity: .3;
+    cursor: auto;
+}
+
+.btn-editar:enabled:hover{
+    background-color: #0570eb;
+    color: #fff;
+}
+
+.btn-excluir:enabled:hover{
+    background-color: #fb5b5b;
+    color: #fff;
 }
 
 .area-divugacao{
@@ -130,12 +315,27 @@ nav{
 }
 
 .divugacao{
-    box-shadow: .1rem .1rem .4rem #a3a3a3;
+    box-shadow: .1rem .1rem .4rem #c8c8c8;
     background-color: #fff;
     box-sizing: border-box;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
+    border: solid .1rem #e2e2e2;
+    cursor: pointer;
+}
+
+/* .btn-detalhes-carro{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 5rem;
+    border: solid .1rem #757474;
+    background-color: transparent;
+    font-size: 1rem;
+} */
+
+.botao-selecionavel.selecionado {
+    border: solid .1rem rgb(101, 173, 255);
 }
 
 .divugacao-img{
@@ -156,8 +356,15 @@ nav{
     flex: 1;
 }
 
+.informaceos{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 .especificacao-modelo{
     font-size: 2rem;
+    margin-bottom: .5rem;
 }
 
 .hr-especificacao{
@@ -177,6 +384,9 @@ nav{
 
 .especificacao-preco-km{
     padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
 }
 
 .especificacao-km{
@@ -185,6 +395,104 @@ nav{
 }
 
 .especificacao-preco{
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: rgb(58, 150, 255);
+}
+
+.vendido{
+    font-size: 1.3rem;
+    color: #06bb00;
+}
+
+@media screen and (max-width: 670px) {
+    .link-direcionamento{
+        display: none;
+    }
+
+    .link-direcionamento-mobile{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .opcoes-links-texto{
+        font-size: 1.8rem;
+        color: #444444;
+        position: fixed;
+        right: 2rem;
+        top: 1.5rem;
+        display: flex;
+        gap: .5rem;
+        align-items: center;
+        transition: .5s;
+    }
+
+    .opcoes-links-texto:hover{
+        color: rgb(58, 150, 255);
+    }
+
+    .listas-links{
+        background-color: rgb(212, 212, 212);
+        list-style: none;
+        position: relative;
+        top: 10rem;
+        z-index: 1;
+        padding: 0 1rem 1rem;
+        right: -1rem;
+        border-radius: 0 0 0 1rem;
+    } 
+
+    .listas-links>li{
+        padding: .5rem;
+    }
+
+    .listas-links-direcionamento{
+        transition: .5s;
+    }
+    
+    .listas-links-direcionamento:hover{
+        color: rgb(58, 150, 255);
+    }
+
+    .botao-opcoes:checked ~ .listas-links{
+        display: block;
+    }
+
+    .hr-link-direcionamento{
+        display: none;
+    }
+
+    .controles{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .filtro-botoes{
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .filtro{
+        justify-content: space-between;
+    }
+
+    .select-busca{
+        width: 100%;
+        height: 3.5rem;
+    }
+    
+    .botoes{
+        justify-content: flex-end;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .nav-titulo{
+        font-size: 2.2rem;
+    }
+
+    .filtro{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+    }
 }

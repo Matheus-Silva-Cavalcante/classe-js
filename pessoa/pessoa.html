@@ -4,26 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pessoas</title>
-    <link rel="stylesheet" href="/pessoa/pessoas.css">
-    <link rel="stylesheet" href="/icon/style.css">
+    <link rel="stylesheet" href="./pessoas.css">
+    <link rel="stylesheet" href="../icon/style.css">
 
+    <script type="module">
+        import {inicializarView} from "../js/index.js";
+        inicializarView('pessoa');
+    </script>
 </head>
 <body>
-    <main>
+    <div id="carregando">Carregando</div>
+
+    <main style="display: none;">
         <div class="container">
             <div class="area-acao-top">
                 <h3>Pessoas Cadastradas</h3>
 
                 <div class="botoes">
-                    <button class="icon-editor btn-aditar botoes-editar-excluir"></button>
+                    <button id="btnAdicionarPessoa" class="btn-acao btn-adicionar icon-plus"></button>
 
-                    <button class="icon-white btn-excluir botoes-editar-excluir"></button>
+                    <button id="btnEditarPessoa" class="btn-acao icon-editor btn-editar btn-editar-excluir"></button>
+
+                    <button id="btnExcluirPessoa" class="btn-acao icon-white btn-excluir btn-editar-excluir"></button>
                 </div>
             </div>
 
             <div class="area-conteudo">
                 <div class="div-conteudo">
-                    <div class="pessoa-cadastrada">
+                    <div class="botao-selecionavel">
                         <div class="img-cadastro">
                             <div class="icon-user img-user"></div>
                         </div>
@@ -45,7 +53,7 @@
                         </div>
                     </div>
 
-                    <div class="pessoa-cadastrada">     
+                    <div class="botao-selecionavel">     
                         <div class="img-cadastro">
                             <div class="icon-office img-user"></div>
                         </div>                                                                   
@@ -66,35 +74,11 @@
                             <div class="conteudo-texto">62 99567-7890</div>                                                                       
                         </div>
                     </div>
-
-                    <div class="conteudo">
-                        <div class="conteudo-texto">Tipo de Pessoa</div>
-
-                        <hr class="hr-conteudo">
-                        <div class="conteudo-texto">Nome Completo</div>
-
-                        <hr class="hr-conteudo">                    
-                        <div class="conteudo-texto">Razão Social</div>
-
-                        <hr class="hr-conteudo">                    
-                        <div class="conteudo-texto">Endereço</div>
-
-                        <hr class="hr-conteudo">                    
-                        <div  class="conteudo-texto">Telefone</div>
-
-                        <hr class="hr-conteudo">                                            
-                        <div  class="conteudo-texto">Email</div>
-
-                        <hr class="hr-conteudo">                    
-                        <div  class="conteudo-texto">CPF</div>
-                    </div>
                 </div>
             </div>
 
             <div class="area-acao-low">
-                <button class="btn-acao btn-adicionar" onclick="location.href= '/pessoa/novapessoa/novapessoa.html'">Adicionar Pessoa</button>
-
-                <button class="btn-acao btn-voltar" onclick="location.href= '/index.html'">Voltar</button>
+                <button class="btn-voltar">Voltar</button>
             </div>
         </div>
     </main>

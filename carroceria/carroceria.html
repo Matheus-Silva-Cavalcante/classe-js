@@ -4,55 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carroceria</title>
-    <link rel="stylesheet" href="/icon/style.css">
-    <link rel="stylesheet" href="/janela.css">
+    <link rel="stylesheet" href="../icon/style.css">
+    <link rel="stylesheet" href="../lista.css">
 
-    <!-- <script src="/carroceria/novacarroceria/salvarcarroceria.js" defer></script>
-    <script src="/carroceria/carroceria.js" defer></script> -->
+    <script type="module">
+        import {inicializarView} from "../js/index.js";
+        inicializarView('carroceria');
+    </script>
 </head>
 <body>
-    <main>
+    <div id="carregando">Carregando</div>
+
+    <main style="display: none;">
         <div class="container">
             <div class="area-acao-top">
                 <h3>Tipos de Carroceria</h3>
 
                 <div class="botoes">
-                    <button id="btnEditarCarroceria" class="icon-editor btn-aditar botoes-editar-excluir"></button>
+                <button class="btn-acao btn-adicionar icon-plus"></button>
 
-                    <button id="btnExcluirCarroceria" class="icon-white btn-excluir botoes-editar-excluir"></button>
+
+                    <button id="btnEditarCarroceria" class="btn-acao icon-editor btn-editar botoes-editar-excluir"></button>
+
+                    <button id="btnExcluirCarroceria" class="btn-acao icon-white btn-excluir botoes-editar-excluir"></button>
                 </div>
             </div>
 
             <div class="area-conteudo">
-                <div class="div-conteudo">
-                    <div class="conteudo">Sedan</div>
-                </div>
+                <div class="botao-selecionavel carroceria">Sedan</div>
 
-                <div class="div-conteudo">
-                    <div class="conteudo">Hatchback</div>
-                </div>
+                <div class="botao-selecionavel carroceria">Hatchback</div>
 
-                <div class="div-conteudo">
-                    <div class="conteudo">SUV</div>
-                </div>
+                <div class="botao-selecionavel carroceria">SUV</div>
 
-                <div class="div-conteudo">
-                    <div class="conteudo">Picape</div>
-                </div>
+                <div class="botao-selecionavel carroceria">Picape</div>
 
-                <div class="div-conteudo">
-                    <div class="conteudo">Fastback</div>
-                </div>
+                <div class="botao-selecionavel carroceria">Fastback</div>
 
-                <div class="div-conteudo">
-                    <div class="conteudo">Conversível</div>
-                </div>
+                <div class="botao-selecionavel carroceria">Conversível</div>
             </div>
 
             <div class="area-acao-low">
-                <button class="btn-acao btn-adicionar" onclick="location.href= '/carroceria/novacarroceria/novacarroceria.html'">Adicionar Carroceria</button>
 
-                <button class="btn-acao btn-voltar" onclick="location.href= '/index.html'">Voltar</button>
+                <button class="btn-acao btn-voltar">Voltar</button>
             </div>
         </div>
     </main>

@@ -4,28 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nova Marca</title>
-    <link rel="stylesheet" href="/cadastro.css">
+    <link rel="stylesheet" href="../../cadastro.css">
 
     <!-- <script src="/marcas/novamarca/novamarca.js" defer></script>
     <script src="/marcas/novamarca/salvarmarca.js" defer></script> -->
+
+    <script type="module">
+        import {inicializarView} from "../../js/index.js";
+        inicializarView('cadastroMarca');
+    </script>
 </head>
 <body>
-    <main>
+    <div id="carregando">Carregando</div>
+
+    <main style="display: none;">
         <div class="container">
-            <div class="area-cadastro">
-                <label for="textoMarca">Marca do Carro :</label>
-
-                <input id="textoMarca" class="input-texto" type="text">
-
-                <div id="inputMarcaVasia" class="alerta-campo-vasio" style="display: none;">
-                    Ops !!
-                </div>
+            <div class="area-titulo">
+                <h3 id="adicionarMarca">Adicionar Marca</h3>
+                <h3 id="editarMarca" style="display: none;">Editar Marca</h3>
             </div>
 
-            <div class="area-botoes">
-                <button id="btnSalvarMarca" class="btn-acao btn-salvar">Salvar</button>
+            <div class="area-acao">
+                <div class="area-cadastro">
+                    <label for="nomeMarca">Marca do Carro :</label>
 
-                <button id="btnCancelarMarca" class="btn-acao btn-cancelar">Cancelar</button>
+                    <input id="nomeMarca" class="input-texto" type="text">
+                    <input id="idMarca" type="hidden">
+
+                    <div id="inputMarcaVasia" class="alerta-campo-vasio" style="display: none;">
+                        Digite o nome da Marca.
+                    </div>
+                </div>
+
+                <div class="area-botoes">
+                    <button id="btnSalvarMarca" class="btn-acao btn-salvar">Salvar</button>
+
+                    <button id="btnCancelarMarca" class="btn-acao btn-cancelar">Cancelar</button>
+                </div>
             </div>
         </div>
     </main>

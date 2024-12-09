@@ -1,0 +1,30 @@
+#carregando{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #4d4d4d;
+    animation-name: pulsando;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+#carregando::after{
+    content: "";
+    animation-name: pontos;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pulsando {
+    0% { opacity: 1;}
+    50% { opacity: .5;}
+}
+
+@keyframes pontos {
+    0% {content: "";}
+    25% {content: ".";}
+    50% {content: "..";}
+    75% {content: "...";}
+}

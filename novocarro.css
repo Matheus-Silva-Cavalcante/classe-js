@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('style.css');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+html{
+    font-size: 10px;
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    width: 100%;
+    max-width: 40rem;
+    height: 100%;
+    max-height: 60rem;
+    border-radius: 1rem;
+    box-shadow: .1rem .1rem .4rem #939393;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+}
+
+.area-titulo{
+    border-radius: 1rem 1rem 0 0;
+    background-color: #eee;
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.area-titulo>h3{
+    font-size: 2rem;
+    color: #4d4d4d;
+}
+
+::-webkit-scrollbar{
+    border-radius: 0 .5rem .5rem 0;
+    width: .5rem;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color:#e4e4e4;
+    border-radius: .5rem;
+}
+
+.area-conteudo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    overflow: auto;
+}
+
+.area-cadastro{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.area-cadastro>label{
+    font-size: 1.8rem;
+    color: #4d4d4d;
+}
+
+.alerta-campo-vasio{
+    color: rgb(255, 32, 32);
+    font-size: 1.5rem;
+}
+
+.lista-pessoas{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-select,
+.select2-container--default 
+.select2-selection--single{
+    border-radius: 1rem;
+    box-shadow: .1rem .1rem .4rem #939393;
+    border: none;
+    height: 3rem;
+    padding: 0 1rem;
+    outline: transparent;
+    transition: .5s;
+    color: #4d4d4d;
+}
+
+.select2-container--default 
+.select2-selection--single 
+.select2-selection__rendered{
+    line-height: 3rem;
+    font-size: 1.3rem;
+}
+
+.select2-container 
+.select2-selection--single 
+.select2-selection__rendered{
+    padding-left: .1rem;
+}
+
+.select2-container--default
+.select2-selection--single
+.select2-selection__arrow{
+    top: .2rem;
+}
+
+.select2-container--default
+.select2-search--dropdown
+.select2-search__field{
+    border-radius: 1rem;
+}
+
+.select2-container--default
+.select2-search--dropdown
+.select2-search__field{
+    outline: none;
+}
+
+.select2-container--default
+.select2-search--dropdown
+.select2-search__field:focus-visible{
+    outline: .1rem solid rgb(101, 173, 255);
+}
+
+.select2 {
+    width: 100%;
+}
+
+.erro{
+    outline: .1rem solid rgb(255, 32, 32);
+}
+
+.input-select:focus-visible{
+    outline: .1rem solid rgb(101, 173, 255);
+}
+
+.area-botoes{
+    border-radius: 0 0 1rem 1rem;
+    background-color: #eee;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.btn-acao{
+    width: 13rem;
+    height: 3.5rem;
+    border: none;
+    border-radius: 1rem;
+    color: #fff;
+    font-size: 1.8rem;
+    transition: .5s;
+}
+
+.btn-salvar{
+    background-color: #3A96FF;
+}
+
+.btn-salvar:hover{
+    background-color: #0570eb;
+}
+
+.btn-cancelar{
+    background-color: #c1c1c1;
+}
+
+.btn-cancelar:hover{
+    background-color: #a5a5a5;
+}

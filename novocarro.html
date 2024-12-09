@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Modelo</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="novocarro.css">
+
+    <script src="./js/jquery.min.js" defer></script>
+    
+    <script src="./js/select2.min.js" defer></script>
+
+    <script type="module">
+        import {inicializarView} from "./js/index.js";
+        inicializarView('cadastroCarro');
+    </script>
+</head>
+
+<body>
+    <div id="carregando">Carregando</div>
+    
+    <div class="container" style="display: none;">
+        <div class="area-titulo">
+            <h3 id="adicionarModelo">Cadastro de Carro</h3>
+            <h3 id="editarModelo" style="display: none;">Editar de Carro</h3>
+        </div>
+
+        <div class="area-conteudo">
+                <div class="area-cadastro">
+                    <label for="idModelo">Modelo :</label>
+                    <select class="input-select" id="idModelo">
+                        
+                    </select>
+                </div>
+
+                <div class="area-cadastro">
+                    <label for="complementoCarro">Complemento do Veículo:</label>
+                    <input class="input-select" id="complementoCarro" type="text" placeholder="Exemplo: Verção, Potencia do Motor...">
+    
+                    <div id="inputComplementoCarroVasia" class="alerta-campo-vasio" style="display: none;">
+                        O complemento do veículo é Obrigatorio.
+                    </div>
+                </div>
+    
+                <div class="area-cadastro">
+                    <label for="anoFabricacao">Ano de Fabricação :</label>
+                    <input class="input-select" id="anoFabricacao" type="number" placeholder="Ano de Fabricação">
+
+                    <input id="idCarro" type="hidden">
+    
+                    <div id="inputAnoFabricacaoVasia" class="alerta-campo-vasio" style="display: none;">
+                        O ano de Fabricação é Obrigatorio.
+                    </div>
+                </div>
+    
+                <div class="area-cadastro">
+                    <label for="anoModelo">Ano do Modelo :</label>
+                    <input class="input-select" id="anoModelo" type="number" placeholder="Ano do Modelo">
+    
+                    <div id="inputAnoModeloVasia" class="alerta-campo-vasio" style="display: none;">
+                        Ano do Modelo é Obrigatorio.
+                    </div>
+                </div>
+
+                <div class="area-cadastro">
+                    <label for="quilometragem">Quilometragem :</label>
+                    <input class="input-select" id="quilometragem" type="number" placeholder="Qual é a Quilometragem ?">
+    
+                    <div id="inputQuilometragemVasia" class="alerta-campo-vasio" style="display: none;">
+                        A Quilometragem do Carro é Obrigatorio.
+                    </div>
+                </div>
+    
+                <div class="area-cadastro">
+                    <label for="corCarro">Cor do Carro :</label>
+                    <input class="input-select" id="corCarro" type="text" placeholder="Qual é a cor do carro ?">
+    
+                    <div id="inputCorCarroVasia" class="alerta-campo-vasio" style="display: none;">
+                        A Cor do Carro é Obrigatório
+                    </div>
+                </div>
+    
+                <div class="area-cadastro">
+                    <label for="placaCarro">Placa do Carro :</label>
+                    <input class="input-select" id="placaCarro" type="text" placeholder="Qual é a Placa do Carro? Ex: AAA0A00">
+    
+                    <div id="inputPlacaCarroVasia" class="alerta-campo-vasio" style="display: none;">
+                        A Placa do Carro é Obrigatorio.
+                    </div>
+                </div>
+
+                <div class="area-cadastro">
+                    <label for="nomeroRenavam">Número Renavam :</label>
+                    <input class="input-select" id="nomeroRenavam" type="number" placeholder="Qual é o Renavam do Carro ?">
+    
+                    <div id="inputRenavamVasia" class="alerta-campo-vasio" style="display: none;">
+                        Número do Renavam é Obrigatorio.
+                    </div>
+                </div>
+
+                <div class="area-cadastro">
+                    <label for="proprietarioAnterior">Proprietário Anterior :</label>
+                    <select class="input-select lista-cliente" id="proprietarioAnterior">
+                        <option>Primeira Pessoa</option>
+                        <option>Segunda Pessoa</option>
+                        <option>Terceira Pessao</option>
+                    </select>
+                </div>
+    
+                <div class="area-cadastro">
+                    <label for="precoCompra">Preço de Compra :</label>
+                    <input class="input-select" id="precoCompra" type="number" placeholder="Preço de Compra.">
+    
+                    <div id="inputPrecoCompraVasia" class="alerta-campo-vasio" style="display: none;">
+                        Preço de Compra é Obrigatorio.
+                    </div>
+                </div>
+
+                <div class="area-cadastro">
+                    <label for="precoAnunciado">Preço Anunciado :</label>
+                    <input class="input-select" id="precoAnunciado" type="number" placeholder="Preço do Anuncio ?">
+    
+                    <div id="inputPrecoAnunciadoVasia" class="alerta-campo-vasio" style="display: none;">
+                        O Preço de Anuncio é Obrigatorio.
+                    </div>
+                </div>
+    
+                <div class="area-cadastro">
+                    <label class="lista-pessoas" for="cliente">
+                        Cliente :
+                        
+                    </label>
+
+                    <select class="input-select lista-cliente" id="cliente">
+                        
+                    </select>
+
+                    <!-- <a href="pessoa/pessoa.html">Cadastro de Pessoas</a> -->
+                </div>
+
+                <div class="area-cadastro">
+                    <label for="precoVenda">Preço de Venda :</label>
+                    <input class="input-select" id="precoVenda" type="number" placeholder="Preço da venda do carro.">
+    
+                    <div id="inputPrecoVendaVasia" class="alerta-campo-vasio" style="display: none;">
+                        Ao incluir o cliente. É obrigatório informar o valor de venda. 
+                    </div>
+
+                    <div id="inputSemCliente" class="alerta-campo-vasio" style="display: none;">
+                        Ao incluir o preço de venda. É Obrigatório informar o Cliente.
+                    </div>
+                </div>
+        </div>
+
+        <div class="area-botoes">
+            <button id="btnSalvarCarro" class="btn-acao btn-salvar">Salvar</button>
+
+            <button id="btnCancelar" class="btn-acao btn-cancelar">Cancelar</button>
+        </div>
+    </div>
+
+    <script>
+        
+    </script>
+</body>
+</html>

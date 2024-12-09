@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('../style.css');
 
 *{
     margin: 0;
@@ -26,8 +27,7 @@ main{
 .container{
     max-width: 40rem;
     width: 100%;
-    max-height: 63rem;
-    /* max-height: 50.5rem; */
+    max-height: 60rem;
     height: 100%;
     box-sizing: border-box;
     box-shadow: .1rem .1rem .4rem #939393;
@@ -56,7 +56,12 @@ main{
     gap: 1rem;
 }
 
-.botoes-editar-excluir{
+.btn-adicionar:hover{
+    background-color: #0570eb;
+    color: #fff;
+}
+
+.btn-acao{
     transition: .5s;
     width: 3.8rem;
     height: 3.8rem;
@@ -68,20 +73,23 @@ main{
     cursor: pointer;
 }
 
-.btn-excluir-ativo{
-    background-color: #fd6a6a;
+.btn-editar-excluir:disabled{
+    opacity: .3;
+    cursor: auto;
 }
 
-.btn-aditar-ativo{
-    background-color: #278afa;
+.botoes-ativo{
+    border: .1rem solid #727272;
 }
 
-.btn-aditar:hover{
-    background-color: #6aaaf2;
+.btn-editar:enabled:hover{
+    background-color: #0570eb;
+    color: #fff;
 }
 
-.btn-excluir:hover{
-    background-color: #ff8c8c;
+.btn-excluir:enabled:hover{
+    background-color: #fb5b5b;
+    color: #fff;
 }
 
 .area-conteudo{
@@ -110,8 +118,9 @@ main{
     border-radius: .5rem;
 }
 
-.pessoa-cadastrada{
+.botao-selecionavel{
     box-sizing: border-box;
+    border: .1rem solid transparent;
     padding: 1rem;
     width: 100%;
     display: flex;
@@ -119,6 +128,14 @@ main{
     box-shadow: .1rem .1rem .4rem #939393;
     color: #4d4d4d;
     border-radius: 1rem;
+}
+
+.botao-selecionavel.selecionado{
+    border: solid .1rem rgb(101, 173, 255);
+}
+
+.botao-selecionavel-ativo{
+    border: .1rem solid rgb(101, 173, 255);
 }
 
 .img-cadastro{
@@ -183,32 +200,19 @@ main{
     padding: 0 1.1rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-}
-
-.btn-acao{
-    width: 15rem;
-    height: 4rem;
-    border-radius: 1rem;
-    border: none;
-    cursor: pointer;
-    transition: .5s;
-}
-
-.btn-adicionar{
-    background-color: #3A96FF;
-    color: #fff;
-    font-size: 1.3rem;
-}
-
-.btn-adicionar:hover{
-    background-color: #0570eb;
+    justify-content: center;
 }
 
 .btn-voltar{
     background-color: #c1c1c1;
     color: #ffffff;
     font-size: 1.6rem;
+    width: 15rem;
+    height: 4rem;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: .5s;
 }
 
 .btn-voltar:hover{

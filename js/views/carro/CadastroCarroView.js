@@ -112,7 +112,17 @@ export default class CadastroCarroView{
 
         const {campoIdProprietarioAnterior} = this._obterCamposCarro();
 
-        campoIdProprietarioAnterior.innerHTML = '';
+        campoIdProprietarioAnterior.innerHTML = ``;
+
+        pessoas.sort((pessoaA, pessoaB) => {
+            if (pessoaA.nome > pessoaB.nome) {
+                return 1;
+            } else if (pessoaB.nome > pessoaA.nome){
+                return -1;
+            } else {
+                return 0;
+            }
+        });
 
         pessoas.forEach(pessoa => {
             campoIdProprietarioAnterior.innerHTML += `
@@ -129,6 +139,16 @@ export default class CadastroCarroView{
         campoIdCliente.innerHTML = `
             <option></option>
         `;
+
+        pessoas.sort((pessoaA, pessoaB) => {
+            if (pessoaA.nome > pessoaB.nome) {
+                return 1;
+            } else if (pessoaB.nome > pessoaA.nome){
+                return -1;
+            } else {
+                return 0;
+            }
+        });
 
         pessoas.forEach(pessoa => {
             campoIdCliente.innerHTML += `

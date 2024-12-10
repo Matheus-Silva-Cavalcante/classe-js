@@ -494,3 +494,14 @@ li>a{
         font-size: 2.2rem;
     }
 }
+
+@media screen and (max-width: 324px) {
+    .opcoes-links-texto{
+        font-size: 1.6rem;
+        right: 1rem;
+    }
+
+    .listas-links{
+        top: 12rem;
+    }
+}

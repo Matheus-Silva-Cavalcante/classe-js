@@ -1,5 +1,5 @@
 import Modelo from "../entities/Modelo.js";
-import ModeloDTO from "../DTOs/modeloDTO.js";
+import ModeloDTO from "../DTOs/ModeloDTO.js";
 
 export default class ModeloMapper{
     _marcaRepository;

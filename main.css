@@ -196,6 +196,7 @@ li>a{
     border-radius: 1rem;
     background-color: #ffe6e6;
     padding: 1rem;
+    white-space: nowrap;
 }
 
 .select-busca{
@@ -404,7 +405,7 @@ li>a{
     color: #06bb00;
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 765px) {
     .link-direcionamento{
         display: none;
     }
@@ -474,6 +475,8 @@ li>a{
 
     .filtro{
         justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
     }
 
     .select-busca{
@@ -489,10 +492,5 @@ li>a{
 @media screen and (max-width: 430px) {
     .nav-titulo{
         font-size: 2.2rem;
-    }
-
-    .filtro{
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
     }
 }
